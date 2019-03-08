@@ -1,0 +1,108 @@
+<div id="searchDivLeft" style="float:left; width: 100%;" >
+    <div>
+        <label for="dateFiled" class="form-field-label">Date Filed</label>
+        <div class="form-field-content">
+          <mat-form-field style="width: calc(45% - 8px);">
+            <input matInput [matDatepicker]="filedFromDate" [value]="filedFromDate.value">
+            <mat-datepicker-toggle matSuffix [for]="filedFromDate"></mat-datepicker-toggle>
+            <mat-datepicker #filedFromDate></mat-datepicker>
+          </mat-form-field>
+    
+          <label style="margin: 0 8px;">to</label>
+          <mat-form-field style="width: calc(45% - 8px);">
+            <input matInput [matDatepicker]="filedDateTo" [value]="filedDateTo.value">
+            <mat-datepicker-toggle matSuffix [for]="filedDateTo"></mat-datepicker-toggle>
+            <mat-datepicker #filedDateTo></mat-datepicker>
+          </mat-form-field>
+        </div>
+    </div>
+  
+    <div>
+        <label class="form-field-label">Session Sequence No.</label>
+        <div class="form-field-content">
+          <mat-form-field class="example-full-width">
+            <input matInput  [(ngModel)]="sessionSequenceNo" >
+          </mat-form-field>
+        </div>
+    </div>
+  
+    <div>
+        <label class="form-field-label">Session Type</label>
+        <div class="form-field-content">
+          <mat-form-field id="billResoNoDrop" style=" width: 45%;">
+            <mat-select [(ngModel)]="billResoNoDrop">
+              <mat-option [value]="firstReg" >FIRST REGULAR SESSION</mat-option>
+              <mat-option [value]="firstSpec" >FIRST SPECIAL SESSION</mat-option>
+              <mat-option [value]="secReg" >SECOND REGULAR SESSION</mat-option>
+              <mat-option [value]="secSpec" >SECOND SPECIAL SESSION</mat-option>
+              <mat-option [value]="thirdReg" >THIRD REGULAR SESSION</mat-option>
+              <mat-option [value]="thirdSpec" >THIRD SPECIAL SESSION</mat-option>
+              <mat-option [value]="fourthReg" >FOURTH REGULAR SESSION</mat-option>
+              <mat-option [value]="fourthSpec" >FOURTH SPECIAL SESSION</mat-option>
+              <mat-option [value]="fifthReg" >FIFTH REGULAR SESSION</mat-option>
+              <mat-option [value]="fifthSpec" >FIFTH SPECIAL SESSION</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+    </div>
+
+    <div>
+        <label class="form-field-label">Bill / Resolution No.</label>
+        <div class="form-field-content">
+          <mat-form-field id="billResoNoDrop" style=" width: 45%;">
+            <mat-select [(ngModel)]="billResoNoDrop">
+              
+            </mat-select>
+          </mat-form-field>&nbsp;
+          <mat-form-field id="billResoNo" style=" width: 45%;">
+              <input matInput  [(ngModel)]="billResoNo" >
+          </mat-form-field>      
+        </div>
+    </div>
+  
+    <div>
+        <label class="form-field-label">Legislative Status</label>
+        <div class="form-field-content">
+          <mat-form-field id="legislativeStatus" style="width: 100%;">
+            <mat-select [(ngModel)]="legislativeStatus">
+              
+            </mat-select>
+          </mat-form-field>
+        </div>
+    </div>
+  
+    <div>
+        <label class="form-field-label">Status Date</label>
+        <div class="form-field-content">
+          <mat-form-field style="width: calc(45% - 8px);">
+            <input matInput [matDatepicker]="statusFromDate" [value]="statusFromDate.value">
+            <mat-datepicker-toggle matSuffix [for]="statusFromDate"></mat-datepicker-toggle>
+            <mat-datepicker #statusFromDate></mat-datepicker>
+          </mat-form-field>
+    
+          <label style="margin: 0 8px;">to</label>
+          <mat-form-field style="width: calc(45% - 8px);">
+            <input matInput [matDatepicker]="statusDateTo" [value]="statusDateTo.value">
+            <mat-datepicker-toggle matSuffix [for]="statusDateTo"></mat-datepicker-toggle>
+            <mat-datepicker #statusDateTo></mat-datepicker>
+          </mat-form-field>
+        </div>
+    </div>
+  
+    <div>
+        <label class="form-field-label">Author</label>
+        <div class="form-field-content">
+          <mat-form-field id="author" style="width: 100%;">
+            <mat-select [(ngModel)]="author">
+              
+            </mat-select>
+          </mat-form-field>
+        </div>  
+    </div>
+  
+    <div>
+        <label class="form-field-label">Co-Author</label> &nbsp;
+        <button mat-raised-button>Please Select...</button>
+    </div>
+  
+  </div>
