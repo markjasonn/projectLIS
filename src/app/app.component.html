@@ -1,2 +1,17 @@
-<LIS-search-page></LIS-search-page>
+<LIS-result-list-page></LIS-result-list-page>
+<!-- <LIS-search-page>
+</LIS-search-page> -->
 
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+        <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
+      <!--this is a place for us to add side-nav code-->
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <!--in here all the content must reside. We will add a navigation header as well-->
+      <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+      <LIS-bill-information-page></LIS-bill-information-page>
+      <main>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
