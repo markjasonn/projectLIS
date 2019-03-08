@@ -31,7 +31,16 @@
         <div class="form-field-content">
           <mat-form-field id="billResoNoDrop" style=" width: 45%;">
             <mat-select [(ngModel)]="billResoNoDrop">
-              
+              <mat-option [value]="firstReg" >FIRST REGULAR SESSION</mat-option>
+              <mat-option [value]="firstSpec" >FIRST SPECIAL SESSION</mat-option>
+              <mat-option [value]="secReg" >SECOND REGULAR SESSION</mat-option>
+              <mat-option [value]="secSpec" >SECOND SPECIAL SESSION</mat-option>
+              <mat-option [value]="thirdReg" >THIRD REGULAR SESSION</mat-option>
+              <mat-option [value]="thirdSpec" >THIRD SPECIAL SESSION</mat-option>
+              <mat-option [value]="fourthReg" >FOURTH REGULAR SESSION</mat-option>
+              <mat-option [value]="fourthSpec" >FOURTH SPECIAL SESSION</mat-option>
+              <mat-option [value]="fifthReg" >FIFTH REGULAR SESSION</mat-option>
+              <mat-option [value]="fifthSpec" >FIFTH SPECIAL SESSION</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
