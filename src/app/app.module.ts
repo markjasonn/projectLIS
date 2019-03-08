@@ -15,6 +15,9 @@ import { ResultListPageComponent } from './components/result-list-page/result-li
 import { BillInformationPageComponent } from './components/bill-information-page/bill-information-page.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component'
 import { SidenavListComponent } from './components/side-nav-list/side-nav-list.component'
+import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,7 @@ import { SidenavListComponent } from './components/side-nav-list/side-nav-list.c
     InfiniteScrollModule,
      MatFormFieldModule, MatInputModule,
     MatSidenavModule, MatToolbarModule, MatIconModule,
-    MatListModule, MatTabsModule
+    MatListModule, MatTabsModule, MatTableModule, MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
