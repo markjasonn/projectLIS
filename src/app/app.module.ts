@@ -20,7 +20,12 @@ import { SearchPageComponent } from './components/search-page/search-page.compon
 import { ResultListPageComponent } from './components/result-list-page/result-list-page.component';
 import { BillInformationPageComponent } from './components/bill-information-page/bill-information-page.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component'
-import { SidenavListComponent } from './components/side-nav-list/side-nav-list.component'
+import { SidenavListComponent } from './components/side-nav-list/side-nav-list.component';
+import { SearchPageTopComponent } from './components/search-page-top/search-page-top.component';
+import { SearchPageMidComponent } from './components/search-page-mid/search-page-mid.component';
+import { SearchPageMidLeftComponent } from './components/search-page-mid-left/search-page-mid-left.component';
+import { SearchPageMidRightComponent } from './components/search-page-mid-right/search-page-mid-right.component';
+import { SearchPageBottomComponent } from './components/search-page-bottom/search-page-bottom.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +33,7 @@ import { SidenavListComponent } from './components/side-nav-list/side-nav-list.c
     SearchPageComponent,
     ResultListPageComponent,
     BillInformationPageComponent,
-    AppHeaderComponent, SidenavListComponent
+    AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent
 
   ],
   imports: [

@@ -1,0 +1,70 @@
+<div id="searchDivRight" style="float: right;" >
+
+    <div>
+        <label for="sponsor" >Sponser</label>
+        <mat-form-field id="sponsor">
+          <mat-select [(ngModel)]="sponsor">
+            
+          </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <label >Co-Sponsor</label> &nbsp;
+        <button mat-raised-button>Please Select...</button>
+    </div>
+
+    <div>
+        <label for="Primary Committee" >Primary Committee</label>
+        <mat-form-field id="Primary Committee">
+          <mat-select [(ngModel)]="primaryCommittee">
+            
+          </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <label >Secondary Committee</label> &nbsp;
+        <button mat-raised-button>Please Select...</button>
+    </div>
+
+    <div>
+        <label >Subject</label> &nbsp;
+        <button mat-raised-button>Please Select...</button>
+    </div>
+
+    <div>
+        <label for="Document Certification" >Document Certification</label>
+        <mat-form-field id="Document Certification">
+          <mat-select [(ngModel)]="secondaryCommittee">
+            
+          </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <label for="dateCertFrom" >Date Certified</label>
+        <mat-form-field>
+          <input matInput [matDatepicker]="dateCertFrom" [value]="dateCertFrom.value">
+          <mat-datepicker-toggle matSuffix [for]="dateCertFrom"></mat-datepicker-toggle>
+          <mat-datepicker #dateCertFrom></mat-datepicker>
+        </mat-form-field>
+  
+        <label >to</label>
+        <mat-form-field>
+          <input matInput [matDatepicker]="dateCertTo" [value]="dateCertTo.value">
+          <mat-datepicker-toggle matSuffix [for]="dateCertTo"></mat-datepicker-toggle>
+          <mat-datepicker #dateCertTo></mat-datepicker>
+        </mat-form-field>
+    </div>
+
+    <div>
+        <label for="scope" >Scope</label>
+        <mat-form-field id="scope">
+          <mat-select [(ngModel)]="scope">
+            
+          </mat-select>
+        </mat-form-field>
+    </div>
+
+</div>
