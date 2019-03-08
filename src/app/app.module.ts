@@ -9,6 +9,12 @@ import {MatInputModule, MatSidenavModule, MatToolbarModule,
         MatIconModule, MatButtonModule, MatCheckboxModule,
         MatListModule } from '@angular/material';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule } from '@angular/material';
+
 
 import { SearchPageComponent } from './components/search-page/search-page.component';
 import { ResultListPageComponent } from './components/result-list-page/result-list-page.component';
@@ -26,13 +32,13 @@ import { SidenavListComponent } from './components/side-nav-list/side-nav-list.c
 
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, FormsModule,
     BrowserAnimationsModule,
     MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatCheckboxModule,
     InfiniteScrollModule,
      MatFormFieldModule, MatInputModule,
     MatSidenavModule, MatToolbarModule, MatIconModule,
-    MatListModule, MatTabsModule
+    MatListModule, MatTabsModule, MatTableModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
