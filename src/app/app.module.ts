@@ -3,25 +3,34 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material';
+import {MatInputModule, MatSidenavModule, MatToolbarModule,
+        MatIconModule, MatButtonModule, MatCheckboxModule,
+        MatListModule } from '@angular/material';
+
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { SearchPageComponent } from './components/search-page/search-page.component';
 import { ResultListPageComponent } from './components/result-list-page/result-list-page.component';
 import { BillInformationPageComponent } from './components/bill-information-page/bill-information-page.component';
+import { AppHeaderComponent } from './components/app-header/app-header.component'
+import { SidenavListComponent } from './components/side-nav-list/side-nav-list.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchPageComponent,
     ResultListPageComponent,
-    BillInformationPageComponent
+    BillInformationPageComponent,
+    AppHeaderComponent, SidenavListComponent
+
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule
+    MatButtonModule, MatCheckboxModule, MatFormFieldModule, MatInputModule,
+    MatSidenavModule, MatToolbarModule, MatIconModule,
+    MatListModule, MatTabsModule
 
   ],
   providers: [],
