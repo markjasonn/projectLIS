@@ -1,21 +1,23 @@
-<div id="searchDivRight" style="float: right;" >
+<div id="searchDivRight" style="float: right; width: 100%;" >
 
     <div>
-        <label for="sponsor" >Sponser</label>
-        <mat-form-field id="sponsor">
-          <mat-select [(ngModel)]="sponsor">
-            
-          </mat-select>
-        </mat-form-field>
+        <label for="sponsor" class="form-field-label" >Sponser</label>
+        <div class="form-field-content">
+            <mat-form-field id="sponsor" >
+              <mat-select [(ngModel)]="sponsor">
+                
+              </mat-select>
+            </mat-form-field>
+        </div>
     </div>
 
     <div>
-        <label >Co-Sponsor</label> &nbsp;
+        <label class="form-field-label" >Co-Sponsor</label> &nbsp;
         <button mat-raised-button>Please Select...</button>
     </div>
 
     <div>
-        <label for="Primary Committee" >Primary Committee</label>
+        <label for="Primary Committee" class="form-field-label" >Primary Committee</label>
         <mat-form-field id="Primary Committee">
           <mat-select [(ngModel)]="primaryCommittee">
             
@@ -24,17 +26,17 @@
     </div>
 
     <div>
-        <label >Secondary Committee</label> &nbsp;
+        <label class="form-field-label" >Secondary Committee</label> &nbsp;
         <button mat-raised-button>Please Select...</button>
     </div>
 
     <div>
-        <label >Subject</label> &nbsp;
+        <label class="form-field-label" >Subject</label> &nbsp;
         <button mat-raised-button>Please Select...</button>
     </div>
 
     <div>
-        <label for="Document Certification" >Document Certification</label>
+        <label for="Document Certification" class="form-field-label" >Document Certification</label>
         <mat-form-field id="Document Certification">
           <mat-select [(ngModel)]="secondaryCommittee">
             
@@ -43,23 +45,25 @@
     </div>
 
     <div>
-        <label for="dateCertFrom" >Date Certified</label>
-        <mat-form-field>
-          <input matInput [matDatepicker]="dateCertFrom" [value]="dateCertFrom.value">
-          <mat-datepicker-toggle matSuffix [for]="dateCertFrom"></mat-datepicker-toggle>
-          <mat-datepicker #dateCertFrom></mat-datepicker>
-        </mat-form-field>
-  
-        <label >to</label>
-        <mat-form-field>
-          <input matInput [matDatepicker]="dateCertTo" [value]="dateCertTo.value">
-          <mat-datepicker-toggle matSuffix [for]="dateCertTo"></mat-datepicker-toggle>
-          <mat-datepicker #dateCertTo></mat-datepicker>
-        </mat-form-field>
+        <label for="dateCertFrom" class="form-field-label" >Date Certified</label>
+        <div class="form-field-content">
+            <mat-form-field style="width: calc(45% - 8px);" >
+              <input matInput [matDatepicker]="dateCertFrom" [value]="dateCertFrom.value">
+              <mat-datepicker-toggle matSuffix [for]="dateCertFrom"></mat-datepicker-toggle>
+              <mat-datepicker #dateCertFrom></mat-datepicker>
+            </mat-form-field>
+      
+            <label style="margin: 0 8px;" >to</label>
+            <mat-form-field style="width: calc(45% - 8px);" >
+              <input matInput [matDatepicker]="dateCertTo" [value]="dateCertTo.value">
+              <mat-datepicker-toggle matSuffix [for]="dateCertTo"></mat-datepicker-toggle>
+              <mat-datepicker #dateCertTo></mat-datepicker>
+            </mat-form-field>
+       </div>
     </div>
 
     <div>
-        <label for="scope" >Scope</label>
+        <label for="scope" class="form-field-label" >Scope</label>
         <mat-form-field id="scope">
           <mat-select [(ngModel)]="scope">
             
