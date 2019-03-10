@@ -1,0 +1,27 @@
+<div id="searchDivTop">
+    <div style="float:right;" >
+        <button mat-raised-button>Submit</button>
+        <button mat-raised-button>Clear</button>
+    </div>
+
+    <div>
+        <label for="congressLibraryField" >Congress Library</label>
+        <mat-form-field id="congressLibraryField">
+          <mat-select [(ngModel)]="congressLibrary">
+            <mat-option *ngFor="let library of congressLibraries" [value]="library.libValue">
+              {{library.libName}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+    
+    <div>
+        <label for="searchCategory" >Search Category</label>
+        <mat-form-field id="searchCategory">
+          <mat-select [(ngModel)]="searchCategory">
+            
+          </mat-select>
+        </mat-form-field>
+    </div>
+    
+  </div>

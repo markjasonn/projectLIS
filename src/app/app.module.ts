@@ -9,15 +9,24 @@ import {MatInputModule, MatSidenavModule, MatToolbarModule,
         MatIconModule, MatButtonModule, MatCheckboxModule,
         MatListModule } from '@angular/material';
 import {MatTabsModule} from '@angular/material/tabs';
+import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule } from '@angular/material';
+
 
 import { SearchPageComponent } from './components/search-page/search-page.component';
 import { ResultListPageComponent } from './components/result-list-page/result-list-page.component';
 import { BillInformationPageComponent } from './components/bill-information-page/bill-information-page.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component'
-import { SidenavListComponent } from './components/side-nav-list/side-nav-list.component'
-import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
-
+import { SidenavListComponent } from './components/side-nav-list/side-nav-list.component';
+import { SearchPageTopComponent } from './components/search-page-top/search-page-top.component';
+import { SearchPageMidComponent } from './components/search-page-mid/search-page-mid.component';
+import { SearchPageMidLeftComponent } from './components/search-page-mid-left/search-page-mid-left.component';
+import { SearchPageMidRightComponent } from './components/search-page-mid-right/search-page-mid-right.component';
+import { SearchPageBottomComponent } from './components/search-page-bottom/search-page-bottom.component'
 
 @NgModule({
   declarations: [
@@ -25,17 +34,17 @@ import {MatCardModule} from '@angular/material/card';
     SearchPageComponent,
     ResultListPageComponent,
     BillInformationPageComponent,
-    AppHeaderComponent, SidenavListComponent
+    AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent
 
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, FormsModule,
     BrowserAnimationsModule,
     MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatCheckboxModule,
     InfiniteScrollModule,
      MatFormFieldModule, MatInputModule,
     MatSidenavModule, MatToolbarModule, MatIconModule,
-    MatListModule, MatTabsModule, MatTableModule, MatCardModule
+    MatListModule, MatTabsModule, MatTableModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
