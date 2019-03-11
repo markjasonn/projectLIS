@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -28,23 +29,44 @@ import { SearchPageMidLeftComponent } from './components/search-page-mid-left/se
 import { SearchPageMidRightComponent } from './components/search-page-mid-right/search-page-mid-right.component';
 import { SearchPageBottomComponent } from './components/search-page-bottom/search-page-bottom.component'
 
+const appRoutes: Routes = [
+  { path: 'search', component: SearchPageComponent },
+  { path: 'billing-info/:id',      component: BillInformationPageComponent },
+  {
+    path: 'result-list',
+    component: ResultListPageComponent,
+    data: { title: 'Heroes List' }
+  },
+  { path: '',
+    redirectTo: '/search',
+    pathMatch: 'full'
+  },
+  //{ path: '**', component: PageNotFoundComponent }
+];
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchPageComponent,
     ResultListPageComponent,
     BillInformationPageComponent,
-    AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent
+    AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, 
+    SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent
 
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
     BrowserModule, FormsModule,
     BrowserAnimationsModule,
     MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatCheckboxModule,
     InfiniteScrollModule,
-     MatFormFieldModule, MatInputModule,
+    MatFormFieldModule, MatInputModule,
     MatSidenavModule, MatToolbarModule, MatIconModule,
-    MatListModule, MatTabsModule, MatTableModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatCardModule
+    MatListModule, MatTabsModule, MatTableModule, MatSelectModule, MatDatepickerModule, 
+    MatNativeDateModule, MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -25,7 +25,7 @@
                           (scrolled)="onScrollDownTable()"
                           (scrolledUp)="onScrollUp()">
                         <tr *ngFor="let element of tableDataObject.displayContainer;">
-                          <td style="flex: 0 1 120px;">{{element.bill}}</td>
+                          <td style="flex: 0 1 120px;"><a routerLink="/billing-info/{{element.bill}}" routerLinkActive="active"><mat-icon>search</mat-icon>{{element.bill}}</a></td>
                           <td>{{element.shortTitle}}</td>
                           <td style="flex: 0 1 120px;">{{element.dateFiled}}</td>
                           <td style="flex: 0 1 250px;">{{element.author}}</td>
