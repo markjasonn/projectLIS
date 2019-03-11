@@ -6,7 +6,8 @@
   <mat-sidenav-content>
     <!--in here all the content must reside. We will add a navigation header as well-->
     <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
-    <LIS-search-page></LIS-search-page>
+    <router-outlet></router-outlet>
+    <!-- <LIS-search-page></LIS-search-page> -->
     <!-- <LIS-result-list-page></LIS-result-list-page> -->
     <main>
     </main>
