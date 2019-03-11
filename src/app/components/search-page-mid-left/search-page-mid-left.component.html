@@ -29,18 +29,11 @@
     <div>
         <label class="form-field-label">Session Type</label>
         <div class="form-field-content">
-          <mat-form-field id="billResoNoDrop" style=" width: 45%;">
-            <mat-select [(ngModel)]="billResoNoDrop">
-              <mat-option [value]="firstReg" >FIRST REGULAR SESSION</mat-option>
-              <mat-option [value]="firstSpec" >FIRST SPECIAL SESSION</mat-option>
-              <mat-option [value]="secReg" >SECOND REGULAR SESSION</mat-option>
-              <mat-option [value]="secSpec" >SECOND SPECIAL SESSION</mat-option>
-              <mat-option [value]="thirdReg" >THIRD REGULAR SESSION</mat-option>
-              <mat-option [value]="thirdSpec" >THIRD SPECIAL SESSION</mat-option>
-              <mat-option [value]="fourthReg" >FOURTH REGULAR SESSION</mat-option>
-              <mat-option [value]="fourthSpec" >FOURTH SPECIAL SESSION</mat-option>
-              <mat-option [value]="fifthReg" >FIFTH REGULAR SESSION</mat-option>
-              <mat-option [value]="fifthSpec" >FIFTH SPECIAL SESSION</mat-option>
+          <mat-form-field id="sessionType" style=" width: 45%;">
+            <mat-select [(ngModel)]="sessionType">
+              <mat-option *ngFor="let session of sessionTypes" [value]="session.value">
+                {{session.name}}
+              </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -51,7 +44,9 @@
         <div class="form-field-content">
           <mat-form-field id="billResoNoDrop" style=" width: 45%;">
             <mat-select [(ngModel)]="billResoNoDrop">
-              
+              <mat-option *ngFor="let bill of billTypes" [value]="bill.value">
+                {{bill.name}}
+              </mat-option>
             </mat-select>
           </mat-form-field>&nbsp;
           <mat-form-field id="billResoNo" style=" width: 45%;">
@@ -65,7 +60,9 @@
         <div class="form-field-content">
           <mat-form-field id="legislativeStatus" style="width: 100%;">
             <mat-select [(ngModel)]="legislativeStatus">
-              
+              <mat-option *ngFor="let legi of legislativeStatusChoice" [value]="legi.value">
+                {{legi.name}}
+              </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -94,7 +91,9 @@
         <div class="form-field-content">
           <mat-form-field id="author" style="width: 100%;">
             <mat-select [(ngModel)]="author">
-              
+              <mat-option *ngFor="let author of authors" [value]="author.value">
+                {{author.name}}
+              </mat-option>
             </mat-select>
           </mat-form-field>
         </div>  
@@ -102,7 +101,11 @@
   
     <div>
         <label class="form-field-label">Co-Author</label> &nbsp;
-        <button mat-raised-button>Please Select...</button>
+        <button mat-raised-button (click)="showCoAuthors(); showPickListDialog();" >Please Select...</button>
     </div>
   
   </div>
+
+ 
+
+ 

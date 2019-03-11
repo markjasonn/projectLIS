@@ -15,6 +15,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule } from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { SearchPageComponent } from './components/search-page/search-page.component';
@@ -29,6 +30,8 @@ import { SearchPageMidLeftComponent } from './components/search-page-mid-left/se
 import { SearchPageMidRightComponent } from './components/search-page-mid-right/search-page-mid-right.component';
 import { SearchPageBottomComponent } from './components/search-page-bottom/search-page-bottom.component';
 import { AddNewComponent } from './components/add-new/add-new.component'
+import { LisPickListComponent } from './components/lis-pick-list/lis-pick-list.component';
+import { PickListDialogComponent } from './components/pick-list-dialog/pick-list-dialog.component'
 
 const appRoutes: Routes = [
   { path: 'search', component: SearchPageComponent },
@@ -46,7 +49,6 @@ const appRoutes: Routes = [
     path: 'add-new',
     component: AddNewComponent
   }
-  //{ path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -55,9 +57,8 @@ const appRoutes: Routes = [
     SearchPageComponent,
     ResultListPageComponent,
     BillInformationPageComponent,
-    AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, 
-    SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent, AddNewComponent
-
+    AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, AddNewComponent,
+    LisPickListComponent, PickListDialogComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -71,10 +72,11 @@ const appRoutes: Routes = [
     MatFormFieldModule, MatInputModule,
     MatSidenavModule, MatToolbarModule, MatIconModule,
     MatListModule, MatTabsModule, MatTableModule, MatSelectModule, MatDatepickerModule, 
-    MatNativeDateModule, MatCardModule
+    MatNativeDateModule, MatCardModule, MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PickListDialogComponent]
 })
 export class AppModule {
   constructor() {
