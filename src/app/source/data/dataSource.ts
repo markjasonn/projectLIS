@@ -6,11 +6,11 @@ export interface BillItems {
 }
 
 export class DataSource{
-    billSearchResult : BillItems[] = billSearchResult;
+    billSearchResult : BillItems[] = billSearchResult;y
 }
 
 const billSearchResult: BillItems[] = [
-    {bill: 'SBN-2100', shortTitle: 'AUTOMATIC REVERSAL OF THE EXCISE TAX ON FUEL UNDER R.A NO.10963 (TRAIN LAW)', dateFiled: "2018-11-19", author: 'VILLANUEVA, JOEL'},
+    {bill: 'SBN-2104', shortTitle: 'AUTOMATIC REVERSAL OF THE EXCISE TAX ON FUEL UNDER R.A NO.10963 (TRAIN LAW)', dateFiled: "11/19/2018", author: 'VILLANUEVA, JOEL'},
     {bill: 'SBN-2101', shortTitle: 'AUTOMATIC REVERSAL OF THE EXCISE TAX ON FUEL UNDER R.A NO.10963 (TRAIN LAW)', dateFiled: "2018-11-19", author: 'VILLANUEVA, JOEL'},
     {bill: 'SBN-2102', shortTitle: 'AUTOMATIC REVERSAL OF THE EXCISE TAX ON FUEL UNDER R.A NO.10963 (TRAIN LAW)', dateFiled: "2018-11-19", author: 'VILLANUEVA, JOEL'},
     {bill: 'SBN-2103', shortTitle: 'AUTOMATIC REVERSAL OF THE EXCISE TAX ON FUEL UNDER R.A NO.10963 (TRAIN LAW)', dateFiled: "2018-11-19", author: 'VILLANUEVA, JOEL'},
