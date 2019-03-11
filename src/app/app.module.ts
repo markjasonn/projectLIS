@@ -27,7 +27,8 @@ import { SearchPageTopComponent } from './components/search-page-top/search-page
 import { SearchPageMidComponent } from './components/search-page-mid/search-page-mid.component';
 import { SearchPageMidLeftComponent } from './components/search-page-mid-left/search-page-mid-left.component';
 import { SearchPageMidRightComponent } from './components/search-page-mid-right/search-page-mid-right.component';
-import { SearchPageBottomComponent } from './components/search-page-bottom/search-page-bottom.component'
+import { SearchPageBottomComponent } from './components/search-page-bottom/search-page-bottom.component';
+import { AddNewComponent } from './components/add-new/add-new.component'
 
 const appRoutes: Routes = [
   { path: 'search', component: SearchPageComponent },
@@ -41,6 +42,10 @@ const appRoutes: Routes = [
     redirectTo: '/search',
     pathMatch: 'full'
   },
+  {
+    path: 'add-new',
+    component: AddNewComponent
+  }
   //{ path: '**', component: PageNotFoundComponent }
 ];
 
@@ -51,7 +56,7 @@ const appRoutes: Routes = [
     ResultListPageComponent,
     BillInformationPageComponent,
     AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, 
-    SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent
+    SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent, AddNewComponent
 
   ],
   imports: [
