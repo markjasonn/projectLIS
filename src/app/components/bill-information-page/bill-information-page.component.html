@@ -1,51 +1,380 @@
 <div style="margin-left:90px;width: 89%;">
-  <div style="text-align:right;margin: 30px 0px  -42px 0px;"><button mat-button><mat-icon>file_copy</mat-icon> Export</button><button mat-button><a routerLink="/result-list"><mat-icon>keyboard_backspace</mat-icon> Back</a></button></div>
-    <mat-tab-group style="margin-top:50px;" >
-        <mat-tab label="Bills / Reso">
-          <label for="">Bill / Res No.</label><span>SBN-1592</span>
-          
-        </mat-tab>
-        <mat-tab label="Committee(s) & Report No">
-          
-        </mat-tab>
-        <mat-tab label="Sponsor(s)">
-          <h1>Some tab content</h1>
-          <p>...</p>
-        </mat-tab>
-        <mat-tab label="Subject">
-          
-        </mat-tab>
-        <mat-tab label="Document Certification">
-          <h1>Some tab content</h1>
-          <p>...</p>
-        </mat-tab>
-        <mat-tab label="House Counter Prt">
-          <h1>Some more tab content</h1>
-          <p>...</p>
-        </mat-tab>
-        <mat-tab label="Floor Activity">
-          <h1>Some tab content</h1>
-          <p>...</p>
-        </mat-tab>
-        <mat-tab label="Votes">
-          <h1>Some more tab content</h1>
-          <p>...</p>
-        </mat-tab>
-        <mat-tab label="Bill Transmittal">
-          <h1>Some tab content</h1>
-          <p>...</p>
-        </mat-tab>
-        <mat-tab label="R.A/Res./J.Res">
-          <h1>Some more tab content</h1>
-          <p>...</p>
-        </mat-tab>
-        <mat-tab label="Copy of R.A./Res./J.Res.">
-            <h1>Some tab content</h1>
-            <p>...</p>
-        </mat-tab>
-        <mat-tab label="Copy of Document(s)">
-            <h1>Some more tab content</h1>
-            <p>...</p>
-        </mat-tab>
-      </mat-tab-group>
+  <div style="text-align:right;margin: 30px 0px  -42px 0px;"><button mat-button>
+      <mat-icon>file_copy</mat-icon> Export
+    </button><button mat-button><a routerLink="/result-list">
+        <mat-icon>keyboard_backspace</mat-icon> Back
+      </a></button></div>
+  <mat-tab-group style="margin-top:50px;">
+    <mat-tab label="Bills / Reso">
+      <div style="padding:35px;">
+        <div class="row" style="width:100%">
+          <div class="col-sm-6">
+            <table class="cell-padding">
+              <tr>
+                <td class="label-bill-info">Bill / Res No.</td>
+                <td>SBN-1592</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Date Filed</td>
+                <td>9/20/2017</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Legislative Status</td>
+                <td>CONSOLIDATED WITH APPROVED BILL</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Status Date</td>
+                <td>12/19/2017</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Session Sequence No.</td>
+                <td>23</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Session Type</td>
+                <td>SECOND REGULAR SESSION</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Scope</td>
+                <td>NATIONAL</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Author</td>
+                <td>RECTO, RALPH G.</td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-sm-6">
+            <table class="cell-padding">
+              <tr>
+                <td class="label-bill-info">Co-Author(s)</td>
+                <td style="word-wrap:break-word">GORDON, RICHARD J.
+                  LEGARDA, LOREN B.
+                  ZUBIRI, JUAN MIGUEL F.
+                  ANGARA, JUAN EDGARDO "SONNY" M.
+                  VILLAR, CYNTHIA A.
+                  EJERCITO, JOSEPH VICTOR G.
+                  BINAY, MARIA LOURDES NANCY S.
+                  PIMENTEL, AQUILINO KOKO III L.
+                  AQUINO IV, PAOLO BENIGNO "BAM"
+                  ESCUDERO, FRANCIS "CHIZ" G.
+                  SOTTO III, VICENTE C.
+                  VILLANUEVA, JOEL
+                  GATCHALIAN, SHERWIN T.</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="row" style="width:100%">
+          <div class="col-sm-12">
+            <table class="cell-padding">
+              <tr>
+                <td style="word-wrap:break-word; width:25%; font-weight: bold; vertical-align: top;">Short Title</td>
+                <td style="word-wrap:break-word">TAX REFORM ACCELERATION AND INCLUSION (TRAIN)</td>
+              </tr>
+              <tr>
+                <td style="word-wrap:break-word; width:25%; font-weight: bold; vertical-align: top;">Long Title</td>
+                <td style="word-wrap:break-word">AN ACT AMENDING SECTIONS 5, 6, 24, 25, 31, 34, 35, 51, 79, 84, 86, 89,
+                  90, 97, 99, 100, 101, 106, 107, 108, 109, 112, 114, 116, 148, 149, 150, 151, 155, 171, 196, 232, 237,
+                  249, 264, AND 288; CREATING NEW SECTIONS 148-A, 150-A, 237-A, 264-A, 264-B, AND 265-A; ALL UNDER
+                  REPUBLIC ACT NO. 8424, OTHERWISE KNOWN AS THE NATIONAL INTERNAL REVENUE CODE OF 1997, AS AMENDED, AND
+                  FOR OTHER PURPOSES</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Committee(s) & Report No">
+      <div style="padding:35px;">
+        <div class="row" style="width:100%">
+          <div class="col-sm-6">
+            <table class="cell-padding">
+              <tr>
+                <td class="label-bill-info">Committee Report No.</td>
+                <td>164</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Primary </td>
+                <td>WAYS AND MEANS</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Secondary Committee(s)</td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-sm-6"></div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Sponsor(s)">
+      <div style="padding:35px;">
+        <div class="row" style="width:100%">
+          <div class="col-sm-12">
+            <table class="cell-padding">
+              <tr>
+                <td class="label-bill-info-full">Sponsor</td>
+                <td>ANGARA, JUAN EDGARDO "SONNY" M.</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Co-Sponsor(s) </td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+
+    <mat-tab label="Subject">
+      <div style="padding:35px;">
+        <div class="row" style="width:100%">
+          <div class="col-sm-12">
+            <table class="cell-padding">
+              <tr>
+                <td class="label-bill-info-full">Subject</td>
+                <td>TAX REFORM FOR ACCELERATION AND INCLUSION ACT (TRAIN)
+                  NATIONAL INTERNAL REVENUE CODE (NIRC)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="Document Certification">
+      <div style="padding:35px;">
+        <div class="row" style="width:100%">
+          <div class="col-sm-12">
+            <table class="cell-padding">
+              <tr>
+                <td class="label-bill-info-full">Document Certification</td>
+                <td>IMMEDIATE</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Date Certified</td>
+                <td>11/20/2017</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+
+
+    <mat-tab label="House Counter Prt">
+      <p>No available content.</p>
+    </mat-tab>
+
+    <mat-tab label="Floor Activity">
+
+    </mat-tab>
+    <mat-tab label="Votes">
+      <div style="padding:35px;">
+        <div class="row" style="width:100%">
+          <div class="col-sm-10">
+            <table class="cell-padding-votes">
+              <tr>
+                <td class="label-bill-info">Date of Vote</td>
+                <td>11/28/2017</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Type of Vote</td>
+                <td>THIRD READING</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Yes</td>
+                <td class="label-bill-info">No</td>
+                <td class="label-bill-info">Abstain</td>
+              </tr>
+
+              <tr>
+                <td>ANGARA, JUAN EDGARDO "SONNY" M.</td>
+                <td>HONTIVEROS, RISA</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>BINAY, MARIA LOURDES NANCY S.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>DRILON, FRANKLIN M.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>EJERCITO, JOSEPH VICTOR G.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ESCUDERO, FRANCIS "CHIZ" G.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>GATCHALIAN, SHERWIN T.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>GORDON, RICHARD J.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>HONASAN II, GREGORIO B.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>LEGARDA, LOREN B.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>PACQUIAO, EMMANUEL "MANNY" D.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>PIMENTEL, AQUILINO KOKO III L.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>POE, GRACE L.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>RECTO, RALPH G.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>SOTTO III, VICENTE C.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>VILLANUEVA, JOEL</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>VILLAR, CYNTHIA A.</td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>ZUBIRI, JUAN MIGUEL F.</td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </div>
+          <div class="col-sm-2"></div>
+        </div>
+      </div>
+    </mat-tab>
+
+
+    <mat-tab label="Bill Transmittal">
+      <div style="padding:35px;">
+        <div class="row" style="width:100%">
+          <div class="col-sm-12">
+            <table class="cell-padding">
+              <tr>
+                <td class="label-bill-info-full">Date request to form a Conf. Ctte.</td>
+                <td>11/28/2017</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info">Conference Committee requested by</td>
+                <td>Conference Committee requested by SENATE</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab label="R.A/Res./J.Res">
+      <div style="padding:35px;">
+        <div class="row" style="width:100%">
+          <div class="col-sm-12">
+            <table class="cell-padding">
+              <tr>
+                <td class="label-bill-info-full"> President's Action</td>
+                <td>CONSOLIDATED WITH APPROVED BILL</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info-full">Date Received by the President</td>
+                <td>12/18/2017</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info-full">Date Signed into Law</td>
+                <td>12/19/2017</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info-full">R.A./Res./J.Res. No.</td>
+                <td>REPUBLIC ACT NO. 10963</td>
+              </tr>
+              <tr>
+                <td class="label-bill-info-full">R.A./Res./J.Res. Title</td>
+                <td>AN ACT AMENDING SECTIONS 5, 6, 24, 25, 27, 31, 32, 33, 34, 51, 52, 56, 57, 58, 74, 79, 84, 86, 90,
+                  91, 97, 99, 100, 101, 106, 107, 108, 109, 110, 112, 114, 116, 127, 128, 129, 145, 148, 149, 151, 155,
+                  171, 174, 175, 177, 178, 179, 180, 181, 182, 183, 186, 188, 189, 190, 191, 192, 193, 194, 195, 196,
+                  197, 232, 236, 237, 249, 254, 264, 269, AND 288; CREATING NEW SECTIONS 51-A, 148-A, 150-A, 150-B,
+                  237-A, 264-A, 264-B AND 265-A; AND REPEALING SECTIONS 35, 62 AND 89, ALL UNDER REPUBLIC ACT NO. 8424,
+                  OTHERWISE KNOWN AS THE NATIONAL INTERNAL REVENUE CODE OF 1997, AS AMENDED, AND FOR OTHER PURPOSES</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </mat-tab>
+
+
+    <mat-tab label="Attachments">
+      <div style="padding:35px;">
+        <div class="row" style="width:100%">
+          <div class="col-sm-10" style="margin: 0 auto;">
+            <div>
+              <table class="md-table" style="width:100%; text-align: center;">
+                <thead>
+                  <tr>
+                    <th style="flex: 0 1 120px;">Action</th>
+                    <th style="flex: 0 1 120px;">File Name</th>
+                    <th style="flex: 0 1 120px;">Document Description</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th style="flex: 0 1 120px;"><mat-icon>save_alt</mat-icon></th>
+                    <td style="flex: 0 1 120px;">ra 10963.pdf</td>
+                    <td style="flex: 0 1 250px;">REPUBLIC ACT NO. 10963</td>
+                  </tr>
+                  <tr>
+                    <th style="flex: 0 1 120px;"><mat-icon>save_alt</mat-icon></th>
+                    <td style="flex: 0 1 120px;">sbn-1592.pdf</td>
+                    <td style="flex: 0 1 250px;">SBN-1592 ([PER CTTE. RPT. NO. 164)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+      </div>
+    </mat-tab>
+
+
+  </mat-tab-group>
 </div>
