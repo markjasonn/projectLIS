@@ -29,6 +29,7 @@ import { SearchPageMidComponent } from './components/search-page-mid/search-page
 import { SearchPageMidLeftComponent } from './components/search-page-mid-left/search-page-mid-left.component';
 import { SearchPageMidRightComponent } from './components/search-page-mid-right/search-page-mid-right.component';
 import { SearchPageBottomComponent } from './components/search-page-bottom/search-page-bottom.component';
+import { AddNewComponent } from './components/add-new/add-new.component'
 import { LisPickListComponent } from './components/lis-pick-list/lis-pick-list.component';
 import { PickListDialogComponent } from './components/pick-list-dialog/pick-list-dialog.component'
 
@@ -44,7 +45,10 @@ const appRoutes: Routes = [
     redirectTo: '/search',
     pathMatch: 'full'
   },
-  //{ path: '**', component: PageNotFoundComponent }
+  {
+    path: 'add-new',
+    component: AddNewComponent
+  }
 ];
 
 @NgModule({
@@ -53,9 +57,8 @@ const appRoutes: Routes = [
     SearchPageComponent,
     ResultListPageComponent,
     BillInformationPageComponent,
-    AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, 
-    SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent, LisPickListComponent, PickListDialogComponent
-
+    AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, AddNewComponent,
+    LisPickListComponent, PickListDialogComponent
   ],
   imports: [
     RouterModule.forRoot(
