@@ -1,0 +1,13 @@
+.pick-list-move-buttons {
+    display: inline-block;
+    width: 80px;
+    text-align: center;
+
+}
+
+.clear-fix:before,
+.clear-fix:after {
+    content:"";
+    display: table;
+    clear: both;
+}
