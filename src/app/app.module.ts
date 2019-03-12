@@ -22,7 +22,7 @@ import { SearchPageComponent } from './components/search-page/search-page.compon
 import { ResultListPageComponent } from './components/result-list-page/result-list-page.component';
 import { BillInformationPageComponent } from './components/bill-information-page/bill-information-page.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component'
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { SidenavListComponent } from './components/side-nav-list/side-nav-list.component';
 import { SearchPageTopComponent } from './components/search-page-top/search-page-top.component';
 import { SearchPageMidComponent } from './components/search-page-mid/search-page-mid.component';
@@ -58,7 +58,7 @@ const appRoutes: Routes = [
     ResultListPageComponent,
     BillInformationPageComponent,
     AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, AddNewComponent,
-    LisPickListComponent, PickListDialogComponent
+    LisPickListComponent, PickListDialogComponent, SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent
   ],
   imports: [
     RouterModule.forRoot(

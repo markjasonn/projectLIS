@@ -6,7 +6,7 @@ export interface BillItems {
 }
 
 export class DataSource{
-    billSearchResult : BillItems[] = billSearchResult;y
+    billSearchResult : BillItems[] = billSearchResult;
 }
 
 const billSearchResult: BillItems[] = [

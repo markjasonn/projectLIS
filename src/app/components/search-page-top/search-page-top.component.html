@@ -1,12 +1,12 @@
 <div id="searchDivTop">
     <div style="float:right;" >
-        <button mat-raised-button><a routerLink="/result-list" routerLinkActive="active">Submit</a></button>
-        <button mat-raised-button>Clear</button>
+        <button mat-stroked-button><a routerLink="/result-list" routerLinkActive="active">Submit</a></button>
+        <button mat-stroked-button style="margin-left:10px;">Clear</button>
     </div>
 
     <div>
-        <label for="congressLibraryField" >Congress Library</label>
-        <mat-form-field id="congressLibraryField">
+        <label for="congressLibraryField" class="form-field-label" >Congress Library</label>
+        <mat-form-field id="congressLibraryField" class="fieldWidth">
           <mat-select [(ngModel)]="congressLibrary">
             <mat-option *ngFor="let library of congressLibraries" [value]="library.libValue">
               {{library.libName}}
@@ -16,8 +16,8 @@
     </div>
     
     <div>
-        <label for="searchCategory" >Search Category</label>
-        <mat-form-field id="searchCategory">
+        <label for="searchCategory"  class="form-field-label">Search Category</label>
+        <mat-form-field id="searchCategory" class="fieldWidth">
           <mat-select [(ngModel)]="searchCategory">
             
           </mat-select>
