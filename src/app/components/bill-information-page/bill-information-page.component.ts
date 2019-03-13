@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{ DataSource, BillItems } from '../../source/data/dataSource';
+import{ DataSource, BillItems, FloorActivity } from '../../source/data/dataSource';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -11,20 +11,29 @@ export class BillInformationPageComponent implements OnInit {
 
   constructor( private activeRoute: ActivatedRoute ) { }
   
-  billNo: string = '';
-  billItems: BillItems[];
+  // billNo: string = '';
+  // billItems: BillItems[];
+  // dataSource: DataSource  = new DataSource();
+
   dataSource: DataSource  = new DataSource();
+  billItem: BillItems;
 
   ngOnInit() {
 
-    this.activeRoute.params.subscribe( param=>{ 
-      //console.log('param', param);
-      this.billNo = param['id'];
-      this.billItems =  this.dataSource.billSearchResult.filter(bill => bill.bill === this.billNo);
-  });
+    this.activeRoute.params.subscribe(param=>{ 
+        // this.billNo = param['id'];
+        // this.billItems =  this.dataSource.billSearchResult.filter(bill => bill.bill === this.billNo);
+        // console.log("Filtered data: ");
+        // console.log(this.billItems);
 
+        let billNo: string = param['id'];
+        let billItems: BillItems[] = this.dataSource.billSearchResult.filter(bill => bill.bill === billNo);
+        console.log("Filtered data: ");
+        console.log(billItems);
 
-
+        if(billItems && billItems.length > 0){
+            this.billItem = billItems[0]; // get the value (returns 1 value only)
+        }
+    });
   }
-
 }

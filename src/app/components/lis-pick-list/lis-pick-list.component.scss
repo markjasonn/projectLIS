@@ -1,8 +1,13 @@
 .pick-list-move-buttons {
     display: inline-block;
-    width: 80px;
+    margin-top: 70px;
+    width: calc(100% - 800px);
     text-align: center;
 
+    & > .mat-raised-button {
+        display: block;
+        margin: 4px auto;
+    }
 }
 
 .clear-fix:before,
