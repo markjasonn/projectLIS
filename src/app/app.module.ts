@@ -15,19 +15,23 @@ import {MatSelectModule} from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule } from '@angular/material';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { SearchPageComponent } from './components/search-page/search-page.component';
 import { ResultListPageComponent } from './components/result-list-page/result-list-page.component';
 import { BillInformationPageComponent } from './components/bill-information-page/bill-information-page.component';
 import { AppHeaderComponent } from './components/app-header/app-header.component'
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { SidenavListComponent } from './components/side-nav-list/side-nav-list.component';
 import { SearchPageTopComponent } from './components/search-page-top/search-page-top.component';
 import { SearchPageMidComponent } from './components/search-page-mid/search-page-mid.component';
 import { SearchPageMidLeftComponent } from './components/search-page-mid-left/search-page-mid-left.component';
 import { SearchPageMidRightComponent } from './components/search-page-mid-right/search-page-mid-right.component';
-import { SearchPageBottomComponent } from './components/search-page-bottom/search-page-bottom.component'
+import { SearchPageBottomComponent } from './components/search-page-bottom/search-page-bottom.component';
+import { AddNewComponent } from './components/add-new/add-new.component'
+import { LisPickListComponent } from './components/lis-pick-list/lis-pick-list.component';
+import { PickListDialogComponent } from './components/pick-list-dialog/pick-list-dialog.component'
 
 const appRoutes: Routes = [
   { path: 'search', component: SearchPageComponent },
@@ -41,7 +45,10 @@ const appRoutes: Routes = [
     redirectTo: '/search',
     pathMatch: 'full'
   },
-  //{ path: '**', component: PageNotFoundComponent }
+  {
+    path: 'add-new',
+    component: AddNewComponent
+  }
 ];
 
 @NgModule({
@@ -50,9 +57,8 @@ const appRoutes: Routes = [
     SearchPageComponent,
     ResultListPageComponent,
     BillInformationPageComponent,
-    AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, 
-    SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent
-
+    AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, AddNewComponent,
+    LisPickListComponent, PickListDialogComponent, SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -66,10 +72,11 @@ const appRoutes: Routes = [
     MatFormFieldModule, MatInputModule,
     MatSidenavModule, MatToolbarModule, MatIconModule,
     MatListModule, MatTabsModule, MatTableModule, MatSelectModule, MatDatepickerModule, 
-    MatNativeDateModule, MatCardModule
+    MatNativeDateModule, MatCardModule, MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [PickListDialogComponent]
 })
 export class AppModule {
   constructor() {
