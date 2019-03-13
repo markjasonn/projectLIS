@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{ DataSource, BillItems } from '../../source/data/dataSource';
+import{ DataSource, BillItems, FloorActivity } from '../../source/data/dataSource';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
@@ -35,14 +35,5 @@ export class BillInformationPageComponent implements OnInit {
             this.billItem = billItems[0]; // get the value (returns 1 value only)
         }
     });
-
-    
-
   }
-
-
-  test(){
-    this.billItem.billInfo.subject.subject
-  }
-
 }
