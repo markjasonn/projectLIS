@@ -8,11 +8,12 @@ export interface BillItems {
 
 interface BillInfo{
     legislativeStatus: string;
+    statusDate: string;
     sessionSequenceNo: string;
     sessionType: string;
     scope: string;
     author: string;
-    coAuthors: string;
+    coAuthors: string[];
     longTitle : string;
     committeeReportNo : CommitteeReportNo;
     sponsor : Sponsor;
@@ -94,11 +95,12 @@ const billSearchResult: BillItems[] = [
     {bill: 'SBN-1592', shortTitle: 'TAX REFORM ACCELERATION AND INCLUSION (TRAIN)', dateFiled: "9/20/2017", author: 'RECTO, RALPH G.', 
         billInfo: {
             legislativeStatus: "CONSOLIDATED WITH APPROVED BILL", 
+            statusDate: "12/19/2017",
             sessionSequenceNo: "23",
             sessionType: "SECOND REGULAR SESSION",
             scope: "NATIONAL",
             author: "RECTO, RALPH G.",
-            coAuthors: 'GORDON, RICHARD J. \n LEGARDA, LOREN B. \n ZUBIRI, JUAN MIGUEL F. \n ANGARA, JUAN EDGARDO "SONNY" M. \n VILLAR, CYNTHIA A.EJERCITO, \n JOSEPH VICTOR G. \n BINAY, MARIA LOURDES NANCY S. \n PIMENTEL, AQUILINO KOKO III L. \n AQUINO IV, PAOLO BENIGNO "BAM" \n ESCUDERO, FRANCIS "CHIZ" G. \n SOTTO III, VICENTE C. \n VILLANUEVA, JOEL \n GATCHALIAN, SHERWIN T.', 
+            coAuthors: ['GORDON, RICHARD J.','LEGARDA, LOREN B.','ZUBIRI, JUAN MIGUEL F.','ANGARA, JUAN EDGARDO "SONNY" M.','VILLAR, CYNTHIA A.','EJERCITO, JOSEPH VICTOR G.','BINAY, MARIA LOURDES NANCY S.','PIMENTEL, AQUILINO KOKO III L.','AQUINO IV, PAOLO BENIGNO "BAM"','ESCUDERO, FRANCIS "CHIZ" G.','SOTTO III, VICENTE C.','VILLANUEVA, JOEL','GATCHALIAN, SHERWIN T.'],
             longTitle : 'AN ACT AMENDING SECTIONS 5, 6, 24, 25, 31, 34, 35, 51, 79, 84, 86, 89, 90, 97, 99, 100, 101, 106, 107, 108, 109, 112, 114, 116, 148, 149, 150, 151, 155, 171, 196, 232, 237, 249, 264, AND 288; CREATING NEW SECTIONS 148-A, 150-A, 237-A, 264-A, 264-B, AND 265-A; ALL UNDER REPUBLIC ACT NO. 8424, OTHERWISE KNOWN AS THE NATIONAL INTERNAL REVENUE CODE OF 1997, AS AMENDED, AND FOR OTHER PURPOSES',
             committeeReportNo : {
                 primaryCommittee: "WAYS AND MEANS",
@@ -205,25 +207,6 @@ const billSearchResult: BillItems[] = [
             }]
         }
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

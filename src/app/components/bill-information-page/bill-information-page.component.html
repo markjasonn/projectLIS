@@ -12,55 +12,49 @@
             <table class="cell-padding">
               <tr>
                 <td class="label-bill-info">Bill / Res No.</td>
-                <td>SBN-1592</td>
+                <td>{{ billItem.bill }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Date Filed</td>
-                <td>9/20/2017</td>
+                <td>{{ billItem.dateFiled }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Legislative Status</td>
-                <td>CONSOLIDATED WITH APPROVED BILL</td>
+                <td>{{ billItem.billInfo.legislativeStatus }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Status Date</td>
-                <td>12/19/2017</td>
+                <td>{{ billItem.billInfo.statusDate }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Session Sequence No.</td>
-                <td>23</td>
+                <td>{{ billItem.billInfo.sessionSequenceNo }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Session Type</td>
-                <td>SECOND REGULAR SESSION</td>
+                <td>{{ billItem.billInfo.sessionType }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Scope</td>
-                <td>NATIONAL</td>
+                <td>{{ billItem.billInfo.scope }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Author</td>
-                <td>RECTO, RALPH G.</td>
+                <td>{{ billItem.billInfo.author }}</td>
               </tr>
             </table>
           </div>
           <div class="col-sm-6">
             <table class="cell-padding">
-              <tr>
+              <!-- <tr>
                 <td class="label-bill-info">Co-Author(s)</td>
-                <td style="word-wrap:break-word">GORDON, RICHARD J.
-                  LEGARDA, LOREN B.
-                  ZUBIRI, JUAN MIGUEL F.
-                  ANGARA, JUAN EDGARDO "SONNY" M.
-                  VILLAR, CYNTHIA A.
-                  EJERCITO, JOSEPH VICTOR G.
-                  BINAY, MARIA LOURDES NANCY S.
-                  PIMENTEL, AQUILINO KOKO III L.
-                  AQUINO IV, PAOLO BENIGNO "BAM"
-                  ESCUDERO, FRANCIS "CHIZ" G.
-                  SOTTO III, VICENTE C.
-                  VILLANUEVA, JOEL
-                  GATCHALIAN, SHERWIN T.</td>
+                <td style="word-wrap:break-word" *ngFor="let author of billItem.billInfo.coAuthors">{{ author }}</td>
+              </tr> -->
+              <tr>
+                  <td class="label-bill-info">Co-Author(s)</td>
+              </tr>
+              <tr *ngFor="let author of billItem.billInfo.coAuthors">
+                  <td style="word-wrap:break-word">{{ author }}</td>
               </tr>
             </table>
           </div>
@@ -70,15 +64,11 @@
             <table class="cell-padding">
               <tr>
                 <td style="word-wrap:break-word; width:25%; font-weight: bold; vertical-align: top;">Short Title</td>
-                <td style="word-wrap:break-word">TAX REFORM ACCELERATION AND INCLUSION (TRAIN)</td>
+                <td style="word-wrap:break-word">{{ billItem.shortTitle }}</td>
               </tr>
               <tr>
                 <td style="word-wrap:break-word; width:25%; font-weight: bold; vertical-align: top;">Long Title</td>
-                <td style="word-wrap:break-word">AN ACT AMENDING SECTIONS 5, 6, 24, 25, 31, 34, 35, 51, 79, 84, 86, 89,
-                  90, 97, 99, 100, 101, 106, 107, 108, 109, 112, 114, 116, 148, 149, 150, 151, 155, 171, 196, 232, 237,
-                  249, 264, AND 288; CREATING NEW SECTIONS 148-A, 150-A, 237-A, 264-A, 264-B, AND 265-A; ALL UNDER
-                  REPUBLIC ACT NO. 8424, OTHERWISE KNOWN AS THE NATIONAL INTERNAL REVENUE CODE OF 1997, AS AMENDED, AND
-                  FOR OTHER PURPOSES</td>
+                <td style="word-wrap:break-word">{{ billItem.billInfo.longTitle }}</td>
               </tr>
             </table>
           </div>
@@ -93,15 +83,15 @@
             <table class="cell-padding">
               <tr>
                 <td class="label-bill-info">Committee Report No.</td>
-                <td>164</td>
+                <td>{{ billItem.billInfo.committeeReportNo.committeeReportNo }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Primary </td>
-                <td>WAYS AND MEANS</td>
+                <td>{{ billItem.billInfo.committeeReportNo.primaryCommittee }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Secondary Committee(s)</td>
-                <td></td>
+                <td>{{ billItem.billInfo.committeeReportNo.secondaryCommittee }}</td>
               </tr>
             </table>
           </div>
@@ -117,11 +107,11 @@
             <table class="cell-padding">
               <tr>
                 <td class="label-bill-info-full">Sponsor</td>
-                <td>ANGARA, JUAN EDGARDO "SONNY" M.</td>
+                <td>{{ billItem.billInfo.sponsor.sponsor }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Co-Sponsor(s) </td>
-                <td></td>
+                <td>{{ billItem.billInfo.sponsor.coSponsor }}</td>
               </tr>
             </table>
           </div>
@@ -137,8 +127,8 @@
             <table class="cell-padding">
               <tr>
                 <td class="label-bill-info-full">Subject</td>
-                <td>TAX REFORM FOR ACCELERATION AND INCLUSION ACT (TRAIN)
-                  NATIONAL INTERNAL REVENUE CODE (NIRC)</td>
+                <!-- <td>{{ billItem.billInfo.subject.subject }}</td> -->
+                <td></td>
               </tr>
             </table>
           </div>
