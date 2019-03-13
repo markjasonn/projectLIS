@@ -5,17 +5,18 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule, MatSidenavModule, MatToolbarModule,
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule, MatSidenavModule, MatToolbarModule,
         MatIconModule, MatButtonModule, MatCheckboxModule,
         MatListModule } from '@angular/material';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatTableModule} from '@angular/material/table';
-import {MatSelectModule} from '@angular/material/select';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { MatSelectModule } from '@angular/material/select';
 import { FormsModule } from '@angular/forms';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule } from '@angular/material';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 import { SearchPageComponent } from './components/search-page/search-page.component';
@@ -32,6 +33,7 @@ import { SearchPageBottomComponent } from './components/search-page-bottom/searc
 import { AddNewComponent } from './components/add-new/add-new.component'
 import { LisPickListComponent } from './components/lis-pick-list/lis-pick-list.component';
 import { PickListDialogComponent } from './components/pick-list-dialog/pick-list-dialog.component'
+import { AddNewComponentForm } from './components/add-new-form/add-new-form.component'
 
 const appRoutes: Routes = [
   { path: 'search', component: SearchPageComponent },
@@ -58,7 +60,8 @@ const appRoutes: Routes = [
     ResultListPageComponent,
     BillInformationPageComponent,
     AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, AddNewComponent,
-    LisPickListComponent, PickListDialogComponent, SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent
+    LisPickListComponent, PickListDialogComponent, SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent,
+    AddNewComponentForm
   ],
   imports: [
     RouterModule.forRoot(
@@ -68,11 +71,11 @@ const appRoutes: Routes = [
     BrowserModule, FormsModule,
     BrowserAnimationsModule,
     MatIconModule, MatFormFieldModule, MatInputModule, MatButtonModule, MatCheckboxModule,
-    InfiniteScrollModule,
-    MatFormFieldModule, MatInputModule,
+    InfiniteScrollModule, MatFormFieldModule, MatInputModule,
     MatSidenavModule, MatToolbarModule, MatIconModule,
     MatListModule, MatTabsModule, MatTableModule, MatSelectModule, MatDatepickerModule, 
-    MatNativeDateModule, MatCardModule, MatDialogModule
+    MatNativeDateModule, MatCardModule, MatDialogModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent],
