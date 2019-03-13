@@ -208,25 +208,6 @@ const billSearchResult: BillItems[] = [
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     {bill: 'SBN-2104', shortTitle: 'AUTOMATIC REVERSAL OF THE EXCISE TAX ON FUEL UNDER R.A NO.10963 (TRAIN LAW)', dateFiled: "11/19/2018", author: 'VILLANUEVA, JOEL', billInfo: null},
     {bill: 'SBN-2029', shortTitle: 'TEACHERS OF CHILDREN WITH HANDICAPS ENHANCEMENT ACT', dateFiled: " 9/24/2018", author: 'BINAY, MARIA LOURDES NANCY S.', billInfo: null},
     {bill: 'SBN-1989', shortTitle: 'SOUTH COTABATO MANPOWER TRAINING CENTER ACT', dateFiled: " 9/10/2018", author: 'BINAY, MARIA LOURDES NANCY S.', billInfo: null},
