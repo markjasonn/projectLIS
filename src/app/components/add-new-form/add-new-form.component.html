@@ -1,0 +1,256 @@
+<div style="margin-top:30px;">
+    <div style="text-align:right; margin-bottom:10px;">
+        <button mat-stroked-button (click)="expandCollapse();">Expand / Collapse</button>
+    </div>
+    <div>
+        <mat-expansion-panel [expanded]="isExpanded" >
+            <mat-expansion-panel-header class="panel-header-custom">
+                Bill / Reso
+            </mat-expansion-panel-header>
+
+            <div class="col-sm-6 inline-display">
+                <div>
+                    <label for="Congress Library" class="form-field-label">Congress Library</label>
+                    <mat-form-field id="congressLibraryField" class="fieldWidth">
+                        <mat-select>
+                            <input matInput>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <label for="Sequence Number" class="form-field-label">Sequence Number</label>
+                    <mat-form-field id="sequenceNo" class="fieldWidth">
+                        <input matInput [(ngModel)]="sequenceNo">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label for="Session Type" class="form-field-label">Session Type</label>
+                    <mat-form-field id="sessionType" class="fieldWidth">
+                        <mat-select>
+                            <input matInput>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label for="RA No" class="form-field-label">R.A./Res./J.Res. No.</label>
+                    <mat-form-field id="billNo" class="fieldWidth">
+                        <input matInput [(ngModel)]="billNo">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label for="RA No" class="form-field-label">R.A./Res./J.Res. Short Title</label>
+                    <mat-form-field id="billTitle" class="fieldWidth">
+                        <input matInput [(ngModel)]="billTitle">
+                    </mat-form-field>
+
+                </div>
+                <div>
+                    <label for="RA No" class="form-field-label">R.A./Res./J.Res. Long Title</label>
+                    <mat-form-field id="billLongTitle" style="width:100%">
+                        <textarea matInput [(ngModel)]="billLongTitle"></textarea>
+                    </mat-form-field>
+
+                </div>
+            </div>
+            <div class="col-sm-6 inline-display">
+                <div>
+                    <label for="Legislative Status" class="form-field-label">Legislative Status</label>
+                    <mat-form-field id="legislativeStatus" class="fieldWidth">
+                        <mat-select>
+                            <input matInput>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label for="Status Date" class="form-field-label">Status Date</label>
+                    <mat-form-field class="fieldWidth">
+                        <input matInput [matDatepicker]="statusDate" [value]="statusDate.value">
+                        <mat-datepicker-toggle matSuffix [for]="statusDate"></mat-datepicker-toggle>
+                        <mat-datepicker #statusDate></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label for="Scope" class="form-field-label">Scope</label>
+                    <mat-form-field id="scope" class="fieldWidth">
+                        <mat-select>
+                            <input matInput>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="isExpanded">
+            <mat-expansion-panel-header class="panel-header-custom">
+                Author(s)
+            </mat-expansion-panel-header>
+
+            <div class="col-sm-6 inline-display">
+                <div>
+                    <label for="Author" class="form-field-label">Author</label>
+                    <mat-form-field id="author" class="fieldWidth">
+                        <mat-select>
+                            <input matInput>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label for="Co-Author(s)" class="form-field-label">Co-Author(s)</label>
+                    <button mat-stroked-button style="font-style:italic;">Please Select...</button>
+                </div>
+            </div>
+            <div class="col-sm-6 inline-display"></div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="isExpanded">
+            <mat-expansion-panel-header class="panel-header-custom">
+                Sponsor(s)
+            </mat-expansion-panel-header>
+
+            <div class="col-sm-6 inline-display">
+                <div>
+                    <label for="Sponsor" class="form-field-label">Sponsor</label>
+                    <mat-form-field id="sponsor" class="fieldWidth">
+                        <mat-select>
+                            <input matInput>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label for="Co-Sponsor(s)" class="form-field-label">Co-Sponsor(s)</label>
+                    <button mat-stroked-button style="font-style:italic;">Please Select...</button>
+                </div>
+            </div>
+            <div class="col-sm-6 inline-display"></div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="isExpanded">
+            <mat-expansion-panel-header class="panel-header-custom">
+                Committee(s)
+            </mat-expansion-panel-header>
+            <div class="col-sm-6 inline-display">
+                <div>
+                    <label for="Committee Report No" class="form-field-label">Committee Report No.</label>
+                    <mat-form-field id="committeeReportNo" class="fieldWidth">
+                        <input matInput [(ngModel)]="committeeReportNo">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label for="Primary Committee" class="form-field-label">Primary Committee</label>
+                    <mat-form-field id="primaryCommittee" class="fieldWidth">
+                        <mat-select>
+                            <input matInput>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label for="Secondary Committee(s)" class="form-field-label">Secondary Committee(s)</label>
+                    <button mat-stroked-button style="font-style:italic;">Please Select...</button>
+                </div>
+            </div>
+            <div class="col-sm-6 inline-display"></div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="isExpanded">
+            <mat-expansion-panel-header class="panel-header-custom">
+                Votes
+            </mat-expansion-panel-header>
+
+            This the expansion 2 content
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="isExpanded">
+            <mat-expansion-panel-header class="panel-header-custom">
+                President's Action
+            </mat-expansion-panel-header>
+
+            <div class="col-sm-6 inline-display">
+                <div>
+                    <label for="President's Action" class="form-field-label">President's Action</label>
+                    <mat-form-field id="presidentsAction" class="fieldWidth">
+                        <mat-select>
+                            <input matInput>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label for="Date Received by the President" class="form-field-label">Date Received by the
+                        President</label>
+                    <mat-form-field class="fieldWidth">
+                        <input matInput [matDatepicker]="dateReceived" [value]="dateReceived.value">
+                        <mat-datepicker-toggle matSuffix [for]="dateReceived"></mat-datepicker-toggle>
+                        <mat-datepicker #dateReceived></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label for="Date Signed into Law" class="form-field-label">Date Signed into Law</label>
+                    <mat-form-field class="fieldWidth">
+                        <input matInput [matDatepicker]="dateSigned" [value]="dateSigned.value">
+                        <mat-datepicker-toggle matSuffix [for]="dateSigned"></mat-datepicker-toggle>
+                        <mat-datepicker #dateSigned></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="col-sm-6 inline-display"></div>
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="isExpanded" >
+            <mat-expansion-panel-header class="panel-header-custom">
+                Copy of Documents
+            </mat-expansion-panel-header>
+
+            This the expansion 2 content
+
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="isExpanded">
+            <mat-expansion-panel-header class="panel-header-custom">
+                Others
+            </mat-expansion-panel-header>
+
+            <div class="col-sm-6 inline-display">
+                <div>
+                    <label for="Document Certification" class="form-field-label">Document Certification</label>
+                    <mat-form-field id="documentCertification" class="fieldWidth">
+                        <mat-select>
+                            <input matInput>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <label for="Date Certified" class="form-field-label">Date Certified</label>
+                    <mat-form-field class="fieldWidth">
+                        <input matInput [matDatepicker]="dateCertified" [value]="dateCertified.value">
+                        <mat-datepicker-toggle matSuffix [for]="dateCertified"></mat-datepicker-toggle>
+                        <mat-datepicker #dateCertified></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div>
+                        <label for="Conference Requested By" class="form-field-label">Conference Requested By</label>
+                        <mat-form-field id="requestedBy" class="fieldWidth">
+                            <input matInput [(ngModel)]="requestedBy">
+                        </mat-form-field>
+    
+                    </div>
+                    <div>
+                            <label for="Date request to form a Conference Committee" class="form-field-label">Date request to form a Conference Committee</label>
+                            <mat-form-field class="fieldWidth">
+                                <input matInput [matDatepicker]="dateRequest" [value]="dateRequest.value">
+                                <mat-datepicker-toggle matSuffix [for]="dateRequest"></mat-datepicker-toggle>
+                                <mat-datepicker #dateRequest></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+            </div>
+            <div class="col-sm-6 inline-display"></div> 
+
+        </mat-expansion-panel>
+    </div>
+
+</div>
