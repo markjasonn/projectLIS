@@ -46,16 +46,16 @@
           </div>
           <div class="col-sm-6">
             <table class="cell-padding">
-              <!-- <tr>
-                <td class="label-bill-info">Co-Author(s)</td>
-                <td style="word-wrap:break-word" *ngFor="let author of billItem.billInfo.coAuthors">{{ author }}</td>
-              </tr> -->
-              <tr>
-                  <td class="label-bill-info">Co-Author(s)</td>
-              </tr>
-              <tr *ngFor="let author of billItem.billInfo.coAuthors">
-                  <td style="word-wrap:break-word">{{ author }}</td>
-              </tr>
+              <thead>
+                  <tr>
+                      <th class="label-bill-info">Co-Author(s)</th>
+                  </tr>
+              </thead>
+              <tbody style="width: 592px; max-height: 200px; display: inline-block; overflow-y: scroll">
+                  <tr *ngFor="let author of billItem.billInfo.coAuthors">
+                      <td style="word-wrap:break-word">{{ author }}</td>
+                  </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -119,17 +119,21 @@
       </div>
     </mat-tab>
 
-
     <mat-tab label="Subject">
       <div style="padding:35px;">
         <div class="row" style="width:100%">
           <div class="col-sm-12">
             <table class="cell-padding">
-              <tr>
-                <td class="label-bill-info-full">Subject</td>
-                <!-- <td>{{ billItem.billInfo.subject.subject }}</td> -->
-                <td></td>
-              </tr>
+                <thead>
+                    <tr>
+                        <td class="label-bill-info-full">Subject</td>
+                    </tr>
+                </thead>
+                <tbody style="max-height: 200px; display: inline-block; overflow-y: scroll">
+                    <tr *ngFor="let subject of billItem.billInfo.subject.subject">
+                        <td style="word-wrap:break-word">{{ subject }}</td>
+                    </tr>
+                </tbody>
             </table>
           </div>
         </div>
@@ -143,11 +147,11 @@
             <table class="cell-padding">
               <tr>
                 <td class="label-bill-info-full">Document Certification</td>
-                <td>IMMEDIATE</td>
+                <td>{{ billItem.billInfo.documentCertification.documentCertification }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Date Certified</td>
-                <td>11/20/2017</td>
+                <td>{{ billItem.billInfo.documentCertification.dateCertified }}</td>
               </tr>
             </table>
           </div>
@@ -157,7 +161,7 @@
 
 
 
-    <mat-tab label="House Counter Prt">
+    <mat-tab label="House Counter Part">
       <p>No available content.</p>
     </mat-tab>
 
@@ -183,7 +187,7 @@
             </table>
           </div>
     </mat-tab>
-    <mat-tab label="Votes">
+    <!-- <mat-tab label="Votes">
       <div style="padding:35px;">
         <div class="row" style="width:100%">
           <div class="col-sm-10">
@@ -292,7 +296,52 @@
           <div class="col-sm-2"></div>
         </div>
       </div>
-    </mat-tab>
+    </mat-tab> -->
+
+
+
+
+    <mat-tab label="Votes">
+        <div style="padding:35px;">
+          <div class="row" style="width:100%">
+            <div class="col-sm-10">
+              <table class="cell-padding-votes">
+                <tr>
+                  <td class="label-bill-info">Date of Vote</td>
+                  <td>{{ billItem.billInfo.vote.dateOfVote }}</td>
+                </tr>
+                <tr>
+                  <td class="label-bill-info">Type of Vote</td>
+                  <td>{{ billItem.billInfo.vote.typeOfVote }}</td>
+                </tr>
+              </table>
+
+              <table class="md-table">
+                  <thead>
+                      <tr>
+                          <th class="label-bill-info">Yes</th>
+                          <th class="label-bill-info">No</th>
+                          <th class="label-bill-info">Abstain</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td style="word-wrap:break-word;white-space: pre-line;vertical-align: top">{{ concatArrayString( billItem.billInfo.vote.yes ) }}</td>
+                          <td style="word-wrap:break-word;white-space: pre-line;vertical-align: top">{{ concatArrayString( billItem.billInfo.vote.no ) }}</td>
+                          <td style="word-wrap:break-word;white-space: pre-line;vertical-align: top">{{ concatArrayString( billItem.billInfo.vote.abstain ) }}</td>
+                      </tr>
+                  </tbody>
+              </table>
+
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+        </div>
+      </mat-tab>
+    
+
+
+
 
 
     <mat-tab label="Bill Transmittal">
@@ -302,11 +351,11 @@
             <table class="cell-padding">
               <tr>
                 <td class="label-bill-info-full">Date request to form a Conf. Ctte.</td>
-                <td>11/28/2017</td>
+                <td>{{ billItem.billInfo.billTransmittal.dateRequestToFormAConfCtte }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Conference Committee requested by</td>
-                <td>Conference Committee requested by SENATE</td>
+                <td>{{ billItem.billInfo.billTransmittal.conferenceCommitteeRequestedBy }}</td>
               </tr>
             </table>
           </div>
@@ -320,29 +369,24 @@
           <div class="col-sm-12">
             <table class="cell-padding">
               <tr>
-                <td class="label-bill-info-full"> President's Action</td>
-                <td>CONSOLIDATED WITH APPROVED BILL</td>
+                <td class="label-bill-info-full">President's Action</td>
+                <td>{{ billItem.billInfo.rAResJRes.presidentAction }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info-full">Date Received by the President</td>
-                <td>12/18/2017</td>
+                <td>{{ billItem.billInfo.rAResJRes.dateReceivedByThePresident }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info-full">Date Signed into Law</td>
-                <td>12/19/2017</td>
+                <td>{{ billItem.billInfo.rAResJRes.dateSignedIntoLaw }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info-full">R.A./Res./J.Res. No.</td>
-                <td>REPUBLIC ACT NO. 10963</td>
+                <td>{{ billItem.billInfo.rAResJRes.resNo }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info-full">R.A./Res./J.Res. Title</td>
-                <td>AN ACT AMENDING SECTIONS 5, 6, 24, 25, 27, 31, 32, 33, 34, 51, 52, 56, 57, 58, 74, 79, 84, 86, 90,
-                  91, 97, 99, 100, 101, 106, 107, 108, 109, 110, 112, 114, 116, 127, 128, 129, 145, 148, 149, 151, 155,
-                  171, 174, 175, 177, 178, 179, 180, 181, 182, 183, 186, 188, 189, 190, 191, 192, 193, 194, 195, 196,
-                  197, 232, 236, 237, 249, 254, 264, 269, AND 288; CREATING NEW SECTIONS 51-A, 148-A, 150-A, 150-B,
-                  237-A, 264-A, 264-B AND 265-A; AND REPEALING SECTIONS 35, 62 AND 89, ALL UNDER REPUBLIC ACT NO. 8424,
-                  OTHERWISE KNOWN AS THE NATIONAL INTERNAL REVENUE CODE OF 1997, AS AMENDED, AND FOR OTHER PURPOSES</td>
+                <td>{{ billItem.billInfo.rAResJRes.resTitle }}</td>
               </tr>
             </table>
           </div>
@@ -365,7 +409,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <!-- <tr>
                     <td style="flex: 0 1 20%;"><mat-icon>save_alt</mat-icon></td>
                     <td style="flex: 0 1 40%;">ra 10963.pdf</td>
                     <td style="flex: 0 1 40%;">REPUBLIC ACT NO. 10963</td>
@@ -374,7 +418,13 @@
                     <td style="flex: 0 1 20%;"><mat-icon>save_alt</mat-icon></td>
                     <td style="flex: 0 1 40%;">sbn-1592.pdf</td>
                     <td style="flex: 0 1 40%;">SBN-1592 ([PER CTTE. RPT. NO. 164)</td>
+                  </tr> -->
+                  <tr *ngFor="let attachment of billItem.billInfo.attachments">
+                    <td style="flex: 0 1 20%;"><mat-icon>save_alt</mat-icon></td>
+                    <td style="flex: 0 1 40%;">{{ attachment.filename }}</td>
+                    <td style="flex: 0 1 40%;">{{ attachment.documentDescription }}</td>
                   </tr>
+                    
                 </tbody>
               </table>
             </div>

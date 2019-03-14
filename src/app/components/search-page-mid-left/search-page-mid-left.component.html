@@ -101,7 +101,10 @@
   
     <div>
         <label class="form-field-label">Co-Author</label> &nbsp;
-        <button mat-stroked-button (click)="showCoAuthors(); showPickListDialog();" style="font-style:italic;">Please Select...</button>
+        <button mat-stroked-button (click)="showPickListDialog();" style="font-style:italic;">
+          <label *ngIf="this.currentDestinationList.length == 0 " >Please Select...</label>
+          <label *ngIf="this.currentDestinationList.length > 0 " >({{this.currentDestinationList.length}}) selected  </label>
+        </button>
     </div>
   
   </div>

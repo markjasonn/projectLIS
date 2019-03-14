@@ -19,7 +19,12 @@ export class SearchPageMidRightComponent implements OnInit {
   private dateCertTo: FormControl;
   private serializedfiledDateCertTo: FormControl;
   private scope: string;
-  private currentSouceList: any[];
+  private sponsorsSourceList: any[] = new Array();
+  private sponsorsDestList: any[] = new Array();
+  private committeeSourceList: any[] = new Array();
+  private committeeDestList: any[] = new Array();
+  private subjectSourceList: any[] = new Array();
+  private subjectDestList: any[] = new Array();
 
   private sponsors: Sponsors[] = [
     {value:'ANGARA, JUAN EDUARDO "SONNY" M.', name:'ANGARA, JUAN EDUARDO "SONNY" M.'},
@@ -64,6 +69,9 @@ export class SearchPageMidRightComponent implements OnInit {
   ngOnInit() {
 
     this.initializeDatePickerValues();
+    this.showCoSponsors();
+    this.show2ndCommitte();
+    this.showSubject();
 
   }
 
@@ -79,22 +87,22 @@ export class SearchPageMidRightComponent implements OnInit {
   }
 
   showCoSponsors(): void {
-    this.currentSouceList = this.sponsors;
+    this.sponsorsSourceList.push.apply(this.sponsorsSourceList, this.sponsors);
   }
 
   show2ndCommitte(): void {
-    this.currentSouceList = this.primaryCommittees;
+    this.committeeSourceList.push.apply(this.committeeSourceList, this.primaryCommittees);
   }
 
   showSubject(): void {
-    this.currentSouceList = this.subject;
+    this.subjectSourceList.push.apply(this.subjectSourceList, this.subject);
   }
 
 
-  showPickListDialog(): void {
+  showPickListDialog(sourceList: any[], destinationList: any[]): void {
     const dialogRef = this.dialog.open(PickListDialogComponent, {
       width: '1000px',
-      data: this.currentSouceList
+      data: {sourceList: sourceList, destinationList: destinationList }
     });
   }
 
