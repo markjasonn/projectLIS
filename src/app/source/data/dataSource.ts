@@ -8,11 +8,12 @@ export interface BillItems {
 
 interface BillInfo{
     legislativeStatus: string;
+    statusDate: string;
     sessionSequenceNo: string;
     sessionType: string;
     scope: string;
     author: string;
-    coAuthors: string;
+    coAuthors: string[];
     longTitle : string;
     committeeReportNo : CommitteeReportNo;
     sponsor : Sponsor;
@@ -22,8 +23,7 @@ interface BillInfo{
     vote : Vote;
     billTransmittal: BillTransmittal;
     rAResJRes : RAResJRes;
-    copyOfRA : CopyOfRA;
-    copyOfDocument : CopyOfDocument;
+    attachments : Attachment[];
 }
 
 interface CommitteeReportNo{
@@ -38,7 +38,7 @@ interface Sponsor{
 }
 
 interface Subject{
-    subject: string;
+    subject: string[];
 }
 
 interface DocumentCertification{
@@ -46,20 +46,19 @@ interface DocumentCertification{
     dateCertified : string;
 }
 
-interface FloorActivity{
+export interface FloorActivity{
     statusDate : string;
     parliamentaryStatus : string;
     senators: string;
     remarks : string;
-    filename: string;
 }
 
 interface Vote{
     dateOfVote : string;
     typeOfVote : string;
-    yes : string;
-    no : string;
-    abstain : string;
+    yes : string[];
+    no : string[];
+    abstain : string[];
 }
 
 interface BillTransmittal{
@@ -75,14 +74,9 @@ interface RAResJRes{
     resTitle: string;
 }
 
-interface CopyOfRA{
+interface Attachment{
     documentDescription: string;
-    filename: string;
-}
-
-interface CopyOfDocument{
-    documentDescription: string;
-    filename: string;
+    filename: string;    
 }
 
 export class DataSource{
@@ -94,11 +88,12 @@ const billSearchResult: BillItems[] = [
     {bill: 'SBN-1592', shortTitle: 'TAX REFORM ACCELERATION AND INCLUSION (TRAIN)', dateFiled: "9/20/2017", author: 'RECTO, RALPH G.', 
         billInfo: {
             legislativeStatus: "CONSOLIDATED WITH APPROVED BILL", 
+            statusDate: "12/19/2017",
             sessionSequenceNo: "23",
             sessionType: "SECOND REGULAR SESSION",
             scope: "NATIONAL",
             author: "RECTO, RALPH G.",
-            coAuthors: 'GORDON, RICHARD J. \n LEGARDA, LOREN B. \n ZUBIRI, JUAN MIGUEL F. \n ANGARA, JUAN EDGARDO "SONNY" M. \n VILLAR, CYNTHIA A.EJERCITO, \n JOSEPH VICTOR G. \n BINAY, MARIA LOURDES NANCY S. \n PIMENTEL, AQUILINO KOKO III L. \n AQUINO IV, PAOLO BENIGNO "BAM" \n ESCUDERO, FRANCIS "CHIZ" G. \n SOTTO III, VICENTE C. \n VILLANUEVA, JOEL \n GATCHALIAN, SHERWIN T.', 
+            coAuthors: ['GORDON, RICHARD J.','LEGARDA, LOREN B.','ZUBIRI, JUAN MIGUEL F.','ANGARA, JUAN EDGARDO "SONNY" M.','VILLAR, CYNTHIA A.','EJERCITO, JOSEPH VICTOR G.','BINAY, MARIA LOURDES NANCY S.','PIMENTEL, AQUILINO KOKO III L.','AQUINO IV, PAOLO BENIGNO "BAM"','ESCUDERO, FRANCIS "CHIZ" G.','SOTTO III, VICENTE C.','VILLANUEVA, JOEL','GATCHALIAN, SHERWIN T.'],
             longTitle : 'AN ACT AMENDING SECTIONS 5, 6, 24, 25, 31, 34, 35, 51, 79, 84, 86, 89, 90, 97, 99, 100, 101, 106, 107, 108, 109, 112, 114, 116, 148, 149, 150, 151, 155, 171, 196, 232, 237, 249, 264, AND 288; CREATING NEW SECTIONS 148-A, 150-A, 237-A, 264-A, 264-B, AND 265-A; ALL UNDER REPUBLIC ACT NO. 8424, OTHERWISE KNOWN AS THE NATIONAL INTERNAL REVENUE CODE OF 1997, AS AMENDED, AND FOR OTHER PURPOSES',
             committeeReportNo : {
                 primaryCommittee: "WAYS AND MEANS",
@@ -110,7 +105,7 @@ const billSearchResult: BillItems[] = [
                 coSponsor: ""
             },
             subject: {
-                subject: "TAX REFORM FOR ACCELERATION AND INCLUSION ACT (TRAIN) \n NATIONAL INTERNAL REVENUE CODE (NIRC)"
+                subject: ['TAX REFORM FOR ACCELERATION AND INCLUSION ACT (TRAIN)','NATIONAL INTERNAL REVENUE CODE (NIRC)']
             },
             documentCertification: {
                 documentCertification : 'IMMEDIATE',
@@ -119,9 +114,9 @@ const billSearchResult: BillItems[] = [
             vote: {
                 dateOfVote : '11/28/2017',
                 typeOfVote : 'THIRD READING',
-                yes : 'ANGARA, JUAN EDGARDO "SONNY" M. \n BINAY, MARIA LOURDES NANCY S. \n DRILON, FRANKLIN M. \n EJERCITO, JOSEPH VICTOR G. \n ESCUDERO, FRANCIS "CHIZ" G. \n GATCHALIAN, SHERWIN T. \n GORDON, RICHARD J. \n LEGARDA, LOREN B. \n PACQUIAO, EMMANUEL "MANNY" D. \n PIMENTEL, AQUILINO KOKO III L. \n POE, GRACE L. \n RECTO, RALPH G. \n SOTTO III, VICENTE C. \n VILLANUEVA, JOEL \n VILLAR, CYNTHIA A. \n ZUBIRI, JUAN MIGUEL F.',
-                no : 'HONTIVEROS, RISA',
-                abstain : '',
+                yes : ['ANGARA, JUAN EDGARDO "SONNY" M.','BINAY, MARIA LOURDES NANCY S.','DRILON, FRANKLIN M.','EJERCITO, JOSEPH VICTOR G.','ESCUDERO, FRANCIS "CHIZ" G.','GATCHALIAN, SHERWIN T.','GORDON, RICHARD J.','LEGARDA, LOREN B.','PACQUIAO, EMMANUEL "MANNY" D.','PIMENTEL, AQUILINO KOKO III L.','POE, GRACE L.','RECTO, RALPH G.','SOTTO III, VICENTE C.','VILLANUEVA, JOEL','VILLAR, CYNTHIA A.','ZUBIRI, JUAN MIGUEL F.'],
+                no : ['HONTIVEROS, RISA'],
+                abstain : [],
             },
             billTransmittal: {
                 dateRequestToFormAConfCtte: '11/28/2017',
@@ -134,96 +129,69 @@ const billSearchResult: BillItems[] = [
                 resNo: 'REPUBLIC ACT NO. 10963.',
                 resTitle: 'AN ACT AMENDING SECTIONS 5, 6, 24, 25, 27, 31, 32, 33, 34, 51, 52, 56, 57, 58, 74, 79, 84, 86, 90, 91, 97, 99, 100, 101, 106, 107, 108, 109, 110, 112, 114, 116, 127, 128, 129, 145, 148, 149, 151, 155, 171, 174, 175, 177, 178, 179, 180, 181, 182, 183, 186, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 232, 236, 237, 249, 254, 264, 269, AND 288; CREATING NEW SECTIONS 51-A, 148-A, 150-A, 150-B, 237-A, 264-A, 264-B AND 265-A; AND REPEALING SECTIONS 35, 62 AND 89, ALL UNDER REPUBLIC ACT NO. 8424, OTHERWISE KNOWN AS THE NATIONAL INTERNAL REVENUE CODE OF 1997, AS AMENDED, AND FOR OTHER PURPOSES Copy of R.A./Res./J.Res.'
             },
-            copyOfRA: {
-                documentDescription: 'REPUBLIC ACT NO. 10963.',
-                filename: 'ra 10963.pdf'
-            },
-            copyOfDocument: {
-                documentDescription: 'SBN-1592 ([PER CTTE. RPT. NO. 164)',
-                filename: 'sbn-1592.pdf'
-            },
+            attachments:[
+                {
+                    documentDescription: 'REPUBLIC ACT NO. 10963.',
+                    filename: 'ra 10963.pdf'
+                },
+                {
+                    documentDescription: 'SBN-1592 ([PER CTTE. RPT. NO. 164)',
+                    filename: 'sbn-1592.pdf'
+                }
+            ],
             floorActivity: [{
                 statusDate : '9/20/2017',
                 parliamentaryStatus : 'SPONSORSHIP SPEECH',
                 senators: 'ANGARA, JUAN EDGARDO "SONNY" M.',
-                remarks : '',
-                filename: 'sbn-1592.pdf'
+                remarks : ''
             },{
                 statusDate : '10/2/2017',
                 parliamentaryStatus : 'INTERPELLATION',
                 senators: 'AQUINO IV, PAOLO BENIGNO "BAM" \n RECTO, RALPH G. \n GATCHALIAN, SHERWIN T.',
-                remarks : '',
-                filename: 'sbn-1592.pdf'
+                remarks : ''
             },{
                 statusDate : '9/27/2017',
                 parliamentaryStatus : 'INTERPELLATION',
                 senators: 'SOTTO III, VICENTE C.',
-                remarks : '',
-                filename: 'sbn-1592.pdf'
+                remarks : ''
             },{
                 statusDate : '10/4/2017',
                 parliamentaryStatus : 'INTERPELLATION',
                 senators: 'DRILON, FRANKLIN M. \n LACSON, PANFILO M. \n HONTIVEROS, RISA \n PANGILINAN, FRANCIS N. \n RECTO, RALPH G. \n GATCHALIAN, SHERWIN T. \n PACQUIAO, EMMANUEL "MANNY" D. \n PIMENTEL, AQUILINO KOKO III L.',
-                remarks : '',
-                filename: 'sbn-1592.pdf'
+                remarks : ''
             },{
                 statusDate : '9/26/2017',
                 parliamentaryStatus : 'INTERPELLATION',
                 senators: 'SOTTO III, VICENTE C.',
-                remarks : '',
-                filename: 'sbn-1592.pdf'
+                remarks : ''
             },{
                 statusDate : '10/4/2017',
                 parliamentaryStatus : 'PERIOD OF INTERPELLATION CLOSED',
                 senators: '',
-                remarks : '',
-                filename: 'sbn-1592.pdf'
+                remarks : ''
             },{
                 statusDate : '11/28/2017',
                 parliamentaryStatus : 'PERIOD OF INDIVIDUAL AMENDMENTS',
                 senators: '',
-                remarks : '',
-                filename: 'sbn-1592.pdf'
+                remarks : ''
             },{
                 statusDate : '9/25/2017',
                 parliamentaryStatus : 'INTERPELLATION',
                 senators: 'POE, GRACE L. \n SOTTO III, VICENTE C.',
-                remarks : '',
-                filename: 'sbn-1592.pdf'
+                remarks : ''
             },{
                 statusDate : '11/27/2017',
                 parliamentaryStatus : 'PERIOD OF INDIVIDUAL AMENDMENTS CLOSED',
                 senators: '',
-                remarks : '',
-                filename: 'sbn-1592.pdf'
+                remarks : ''
             },{
                 statusDate : '12/28/2017',
                 parliamentaryStatus : 'PERIOD OF INDIVIDUAL AMENDMENTS CLOSED',
                 senators: '',
-                remarks : '',
-                filename: 'sbn-1592.pdf'
+                remarks : ''
             }]
         }
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -12,56 +12,50 @@
             <table class="cell-padding">
               <tr>
                 <td class="label-bill-info">Bill / Res No.</td>
-                <td>SBN-1592</td>
+                <td>{{ billItem.bill }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Date Filed</td>
-                <td>9/20/2017</td>
+                <td>{{ billItem.dateFiled }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Legislative Status</td>
-                <td>CONSOLIDATED WITH APPROVED BILL</td>
+                <td>{{ billItem.billInfo.legislativeStatus }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Status Date</td>
-                <td>12/19/2017</td>
+                <td>{{ billItem.billInfo.statusDate }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Session Sequence No.</td>
-                <td>23</td>
+                <td>{{ billItem.billInfo.sessionSequenceNo }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Session Type</td>
-                <td>SECOND REGULAR SESSION</td>
+                <td>{{ billItem.billInfo.sessionType }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Scope</td>
-                <td>NATIONAL</td>
+                <td>{{ billItem.billInfo.scope }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Author</td>
-                <td>RECTO, RALPH G.</td>
+                <td>{{ billItem.billInfo.author }}</td>
               </tr>
             </table>
           </div>
           <div class="col-sm-6">
             <table class="cell-padding">
-              <tr>
-                <td class="label-bill-info">Co-Author(s)</td>
-                <td style="word-wrap:break-word">GORDON, RICHARD J.
-                  LEGARDA, LOREN B.
-                  ZUBIRI, JUAN MIGUEL F.
-                  ANGARA, JUAN EDGARDO "SONNY" M.
-                  VILLAR, CYNTHIA A.
-                  EJERCITO, JOSEPH VICTOR G.
-                  BINAY, MARIA LOURDES NANCY S.
-                  PIMENTEL, AQUILINO KOKO III L.
-                  AQUINO IV, PAOLO BENIGNO "BAM"
-                  ESCUDERO, FRANCIS "CHIZ" G.
-                  SOTTO III, VICENTE C.
-                  VILLANUEVA, JOEL
-                  GATCHALIAN, SHERWIN T.</td>
-              </tr>
+              <thead>
+                  <tr>
+                      <th class="label-bill-info">Co-Author(s)</th>
+                  </tr>
+              </thead>
+              <tbody style="width: 592px; max-height: 200px; display: inline-block; overflow-y: scroll">
+                  <tr *ngFor="let author of billItem.billInfo.coAuthors">
+                      <td style="word-wrap:break-word">{{ author }}</td>
+                  </tr>
+              </tbody>
             </table>
           </div>
         </div>
@@ -70,15 +64,11 @@
             <table class="cell-padding">
               <tr>
                 <td style="word-wrap:break-word; width:25%; font-weight: bold; vertical-align: top;">Short Title</td>
-                <td style="word-wrap:break-word">TAX REFORM ACCELERATION AND INCLUSION (TRAIN)</td>
+                <td style="word-wrap:break-word">{{ billItem.shortTitle }}</td>
               </tr>
               <tr>
                 <td style="word-wrap:break-word; width:25%; font-weight: bold; vertical-align: top;">Long Title</td>
-                <td style="word-wrap:break-word">AN ACT AMENDING SECTIONS 5, 6, 24, 25, 31, 34, 35, 51, 79, 84, 86, 89,
-                  90, 97, 99, 100, 101, 106, 107, 108, 109, 112, 114, 116, 148, 149, 150, 151, 155, 171, 196, 232, 237,
-                  249, 264, AND 288; CREATING NEW SECTIONS 148-A, 150-A, 237-A, 264-A, 264-B, AND 265-A; ALL UNDER
-                  REPUBLIC ACT NO. 8424, OTHERWISE KNOWN AS THE NATIONAL INTERNAL REVENUE CODE OF 1997, AS AMENDED, AND
-                  FOR OTHER PURPOSES</td>
+                <td style="word-wrap:break-word">{{ billItem.billInfo.longTitle }}</td>
               </tr>
             </table>
           </div>
@@ -93,15 +83,15 @@
             <table class="cell-padding">
               <tr>
                 <td class="label-bill-info">Committee Report No.</td>
-                <td>164</td>
+                <td>{{ billItem.billInfo.committeeReportNo.committeeReportNo }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Primary </td>
-                <td>WAYS AND MEANS</td>
+                <td>{{ billItem.billInfo.committeeReportNo.primaryCommittee }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Secondary Committee(s)</td>
-                <td></td>
+                <td>{{ billItem.billInfo.committeeReportNo.secondaryCommittee }}</td>
               </tr>
             </table>
           </div>
@@ -117,11 +107,11 @@
             <table class="cell-padding">
               <tr>
                 <td class="label-bill-info-full">Sponsor</td>
-                <td>ANGARA, JUAN EDGARDO "SONNY" M.</td>
+                <td>{{ billItem.billInfo.sponsor.sponsor }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Co-Sponsor(s) </td>
-                <td></td>
+                <td>{{ billItem.billInfo.sponsor.coSponsor }}</td>
               </tr>
             </table>
           </div>
@@ -129,17 +119,21 @@
       </div>
     </mat-tab>
 
-
     <mat-tab label="Subject">
       <div style="padding:35px;">
         <div class="row" style="width:100%">
           <div class="col-sm-12">
             <table class="cell-padding">
-              <tr>
-                <td class="label-bill-info-full">Subject</td>
-                <td>TAX REFORM FOR ACCELERATION AND INCLUSION ACT (TRAIN)
-                  NATIONAL INTERNAL REVENUE CODE (NIRC)</td>
-              </tr>
+                <thead>
+                    <tr>
+                        <td class="label-bill-info-full">Subject</td>
+                    </tr>
+                </thead>
+                <tbody style="max-height: 200px; display: inline-block; overflow-y: scroll">
+                    <tr *ngFor="let subject of billItem.billInfo.subject.subject">
+                        <td style="word-wrap:break-word">{{ subject }}</td>
+                    </tr>
+                </tbody>
             </table>
           </div>
         </div>
@@ -153,11 +147,11 @@
             <table class="cell-padding">
               <tr>
                 <td class="label-bill-info-full">Document Certification</td>
-                <td>IMMEDIATE</td>
+                <td>{{ billItem.billInfo.documentCertification.documentCertification }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Date Certified</td>
-                <td>11/20/2017</td>
+                <td>{{ billItem.billInfo.documentCertification.dateCertified }}</td>
               </tr>
             </table>
           </div>
@@ -167,14 +161,33 @@
 
 
 
-    <mat-tab label="House Counter Prt">
+    <mat-tab label="House Counter Part">
       <p>No available content.</p>
     </mat-tab>
 
     <mat-tab label="Floor Activity">
-
+        <div style="margin: 25px auto 0;width: 75%;">
+            <table class="md-table">
+                <thead>
+                  <tr>
+                    <th style="flex: 0 1 120px;">Status Date</th>
+                    <th style="flex: 0 1 280px;">Parliamentary Status</th>
+                    <th style="flex: 0 1 400px;">Senator(s)</th>
+                    <th>Remarks</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let floorAct of billItem.billInfo.floorActivity">
+                    <td style="flex: 0 1 120px;">{{floorAct.statusDate}}</td>
+                    <td style="flex: 0 1 280px;">{{floorAct.parliamentaryStatus}}</td>
+                    <td style="flex: 0 1 400px; white-space: pre-line;">{{floorAct.senators}}</td>
+                    <td>{{floorAct.remarks}}</td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
     </mat-tab>
-    <mat-tab label="Votes">
+    <!-- <mat-tab label="Votes">
       <div style="padding:35px;">
         <div class="row" style="width:100%">
           <div class="col-sm-10">
@@ -283,7 +296,52 @@
           <div class="col-sm-2"></div>
         </div>
       </div>
-    </mat-tab>
+    </mat-tab> -->
+
+
+
+
+    <mat-tab label="Votes">
+        <div style="padding:35px;">
+          <div class="row" style="width:100%">
+            <div class="col-sm-10">
+              <table class="cell-padding-votes">
+                <tr>
+                  <td class="label-bill-info">Date of Vote</td>
+                  <td>{{ billItem.billInfo.vote.dateOfVote }}</td>
+                </tr>
+                <tr>
+                  <td class="label-bill-info">Type of Vote</td>
+                  <td>{{ billItem.billInfo.vote.typeOfVote }}</td>
+                </tr>
+              </table>
+
+              <table class="md-table">
+                  <thead>
+                      <tr>
+                          <th class="label-bill-info">Yes</th>
+                          <th class="label-bill-info">No</th>
+                          <th class="label-bill-info">Abstain</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td style="word-wrap:break-word;white-space: pre-line;vertical-align: top">{{ concatArrayString( billItem.billInfo.vote.yes ) }}</td>
+                          <td style="word-wrap:break-word;white-space: pre-line;vertical-align: top">{{ concatArrayString( billItem.billInfo.vote.no ) }}</td>
+                          <td style="word-wrap:break-word;white-space: pre-line;vertical-align: top">{{ concatArrayString( billItem.billInfo.vote.abstain ) }}</td>
+                      </tr>
+                  </tbody>
+              </table>
+
+            </div>
+            <div class="col-sm-2"></div>
+          </div>
+        </div>
+      </mat-tab>
+    
+
+
+
 
 
     <mat-tab label="Bill Transmittal">
@@ -293,11 +351,11 @@
             <table class="cell-padding">
               <tr>
                 <td class="label-bill-info-full">Date request to form a Conf. Ctte.</td>
-                <td>11/28/2017</td>
+                <td>{{ billItem.billInfo.billTransmittal.dateRequestToFormAConfCtte }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info">Conference Committee requested by</td>
-                <td>Conference Committee requested by SENATE</td>
+                <td>{{ billItem.billInfo.billTransmittal.conferenceCommitteeRequestedBy }}</td>
               </tr>
             </table>
           </div>
@@ -311,29 +369,24 @@
           <div class="col-sm-12">
             <table class="cell-padding">
               <tr>
-                <td class="label-bill-info-full"> President's Action</td>
-                <td>CONSOLIDATED WITH APPROVED BILL</td>
+                <td class="label-bill-info-full">President's Action</td>
+                <td>{{ billItem.billInfo.rAResJRes.presidentAction }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info-full">Date Received by the President</td>
-                <td>12/18/2017</td>
+                <td>{{ billItem.billInfo.rAResJRes.dateReceivedByThePresident }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info-full">Date Signed into Law</td>
-                <td>12/19/2017</td>
+                <td>{{ billItem.billInfo.rAResJRes.dateSignedIntoLaw }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info-full">R.A./Res./J.Res. No.</td>
-                <td>REPUBLIC ACT NO. 10963</td>
+                <td>{{ billItem.billInfo.rAResJRes.resNo }}</td>
               </tr>
               <tr>
                 <td class="label-bill-info-full">R.A./Res./J.Res. Title</td>
-                <td>AN ACT AMENDING SECTIONS 5, 6, 24, 25, 27, 31, 32, 33, 34, 51, 52, 56, 57, 58, 74, 79, 84, 86, 90,
-                  91, 97, 99, 100, 101, 106, 107, 108, 109, 110, 112, 114, 116, 127, 128, 129, 145, 148, 149, 151, 155,
-                  171, 174, 175, 177, 178, 179, 180, 181, 182, 183, 186, 188, 189, 190, 191, 192, 193, 194, 195, 196,
-                  197, 232, 236, 237, 249, 254, 264, 269, AND 288; CREATING NEW SECTIONS 51-A, 148-A, 150-A, 150-B,
-                  237-A, 264-A, 264-B AND 265-A; AND REPEALING SECTIONS 35, 62 AND 89, ALL UNDER REPUBLIC ACT NO. 8424,
-                  OTHERWISE KNOWN AS THE NATIONAL INTERNAL REVENUE CODE OF 1997, AS AMENDED, AND FOR OTHER PURPOSES</td>
+                <td>{{ billItem.billInfo.rAResJRes.resTitle }}</td>
               </tr>
             </table>
           </div>
@@ -356,7 +409,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
+                  <!-- <tr>
                     <td style="flex: 0 1 20%;"><mat-icon>save_alt</mat-icon></td>
                     <td style="flex: 0 1 40%;">ra 10963.pdf</td>
                     <td style="flex: 0 1 40%;">REPUBLIC ACT NO. 10963</td>
@@ -365,7 +418,13 @@
                     <td style="flex: 0 1 20%;"><mat-icon>save_alt</mat-icon></td>
                     <td style="flex: 0 1 40%;">sbn-1592.pdf</td>
                     <td style="flex: 0 1 40%;">SBN-1592 ([PER CTTE. RPT. NO. 164)</td>
+                  </tr> -->
+                  <tr *ngFor="let attachment of billItem.billInfo.attachments">
+                    <td style="flex: 0 1 20%;"><mat-icon>save_alt</mat-icon></td>
+                    <td style="flex: 0 1 40%;">{{ attachment.filename }}</td>
+                    <td style="flex: 0 1 40%;">{{ attachment.documentDescription }}</td>
                   </tr>
+                    
                 </tbody>
               </table>
             </div>

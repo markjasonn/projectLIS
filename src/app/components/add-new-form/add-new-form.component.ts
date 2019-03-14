@@ -18,6 +18,7 @@ dateReceived: FormControl = new FormControl();
 dateCertified: FormControl = new FormControl();
 requestedBy: string = '';
 dateRequest: FormControl = new FormControl();
+voteDate: FormControl = new FormControl();
 
   constructor( ) { }
 
