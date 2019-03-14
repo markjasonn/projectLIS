@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import{ DataSource, BillItems } from '../../source/data/dataSource';
+import{ DataSource, BillItems, FloorActivity } from '../../source/data/dataSource';
 import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({

@@ -5,7 +5,9 @@
         <div class="form-field-content">
             <mat-form-field id="sponsor" >
               <mat-select [(ngModel)]="sponsor">
-                
+                <mat-option *ngFor="let sponsor of sponsors" [value]="sponsor.value">
+                  {{sponsor.name}}
+                </mat-option>
               </mat-select>
             </mat-form-field>
         </div>
@@ -13,33 +15,37 @@
 
     <div>
         <label class="form-field-label" >Co-Sponsor</label> &nbsp;
-        <button mat-stroked-button style="font-style:italic;">Please Select...</button>
+        <button mat-stroked-button style="font-style:italic;" (click)="showCoSponsors(); showPickListDialog();" >Please Select...</button>
     </div>
 
     <div>
         <label for="Primary Committee" class="form-field-label" >Primary Committee</label>
         <mat-form-field id="Primary Committee">
           <mat-select [(ngModel)]="primaryCommittee">
-            
+            <mat-option *ngFor="let primaryCommittee of primaryCommittees" [value]="primaryCommittee.value">
+              {{primaryCommittee.name}}
+            </mat-option>
           </mat-select>
         </mat-form-field>
     </div>
 
     <div>
         <label for="Secondary Committee" class="form-field-label" >Secondary Committee</label> &nbsp;
-        <button mat-stroked-button style="font-style:italic;">Please Select...</button>
+        <button mat-stroked-button style="font-style:italic;" (click)="show2ndCommitte(); showPickListDialog();" >Please Select...</button>
     </div>
 
     <div>
         <label for="Subject" class="form-field-label" >Subject</label> &nbsp;
-        <button mat-stroked-button style="font-style:italic;">Please Select...</button>
+        <button mat-stroked-button style="font-style:italic;" (click)="showSubject(); showPickListDialog();" >Please Select...</button>
     </div>
 
     <div>
         <label for="Document Certification" class="form-field-label" >Document Certification</label>
         <mat-form-field id="Document Certification">
-          <mat-select [(ngModel)]="secondaryCommittee">
-            
+          <mat-select [(ngModel)]="documentCertification">
+            <mat-option *ngFor="let certificate of certificates" [value]="certificate.value">
+              {{certificate.name}}
+            </mat-option>
           </mat-select>
         </mat-form-field>
     </div>
@@ -66,7 +72,9 @@
         <label for="scope" class="form-field-label" >Scope</label>
         <mat-form-field id="scope">
           <mat-select [(ngModel)]="scope">
-            
+            <mat-option *ngFor="let scope of scopes" [value]="scope.value">
+              {{scope.name}}
+            </mat-option>
           </mat-select>
         </mat-form-field>
     </div>

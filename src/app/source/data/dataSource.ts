@@ -46,7 +46,7 @@ interface DocumentCertification{
     dateCertified : string;
 }
 
-interface FloorActivity{
+export interface FloorActivity{
     statusDate : string;
     parliamentaryStatus : string;
     senators: string;

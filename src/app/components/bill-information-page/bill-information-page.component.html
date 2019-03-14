@@ -166,7 +166,26 @@
     </mat-tab>
 
     <mat-tab label="Floor Activity">
-
+        <div style="margin: 25px auto 0;width: 75%;">
+            <table class="md-table">
+                <thead>
+                  <tr>
+                    <th style="flex: 0 1 120px;">Status Date</th>
+                    <th style="flex: 0 1 280px;">Parliamentary Status</th>
+                    <th style="flex: 0 1 400px;">Senator(s)</th>
+                    <th>Remarks</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let floorAct of billItem.billInfo.floorActivity">
+                    <td style="flex: 0 1 120px;">{{floorAct.statusDate}}</td>
+                    <td style="flex: 0 1 280px;">{{floorAct.parliamentaryStatus}}</td>
+                    <td style="flex: 0 1 400px; white-space: pre-line;">{{floorAct.senators}}</td>
+                    <td>{{floorAct.remarks}}</td>
+                  </tr>
+                </tbody>
+            </table>
+          </div>
     </mat-tab>
     <!-- <mat-tab label="Votes">
       <div style="padding:35px;">

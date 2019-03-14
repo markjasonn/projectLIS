@@ -35,3 +35,9 @@ mat-toolbar{
         border-radius: 0px;
     }
 }
+
+.fixed-header {
+    position: fixed;
+    z-index:999;
+    margin-bottom: 100px;
+}
