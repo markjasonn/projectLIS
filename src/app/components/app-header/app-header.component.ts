@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-header',
@@ -10,13 +11,18 @@ export class AppHeaderComponent {
 
     @Output() public sidenavToggle = new EventEmitter();
  
-    constructor() { }
+    constructor( private router: Router ) { }
    
     ngOnInit() {
     }
    
     public onToggleSidenav = () => {
       this.sidenavToggle.emit();
-    }    
+    }  
+    
+    
+    login(){
+      this.router.navigate(["/login"]);
+  }
 
 }
