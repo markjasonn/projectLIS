@@ -3,8 +3,8 @@
         <button mat-stroked-button (click)="expandCollapse();">Expand / Collapse</button>
     </div>
     <div>
-        <mat-expansion-panel [expanded]="isExpanded" >
-            <mat-expansion-panel-header class="panel-header-custom">
+        <mat-expansion-panel [expanded]="isExpanded">
+            <mat-expansion-panel-header>
                 Bill / Reso
             </mat-expansion-panel-header>
 
@@ -83,7 +83,7 @@
         </mat-expansion-panel>
 
         <mat-expansion-panel [expanded]="isExpanded">
-            <mat-expansion-panel-header class="panel-header-custom">
+            <mat-expansion-panel-header>
                 Author(s)
             </mat-expansion-panel-header>
 
@@ -106,7 +106,7 @@
         </mat-expansion-panel>
 
         <mat-expansion-panel [expanded]="isExpanded">
-            <mat-expansion-panel-header class="panel-header-custom">
+            <mat-expansion-panel-header>
                 Sponsor(s)
             </mat-expansion-panel-header>
 
@@ -129,7 +129,7 @@
         </mat-expansion-panel>
 
         <mat-expansion-panel [expanded]="isExpanded">
-            <mat-expansion-panel-header class="panel-header-custom">
+            <mat-expansion-panel-header>
                 Committee(s)
             </mat-expansion-panel-header>
             <div class="col-sm-6 inline-display">
@@ -157,16 +157,68 @@
         </mat-expansion-panel>
 
         <mat-expansion-panel [expanded]="isExpanded">
-            <mat-expansion-panel-header class="panel-header-custom">
+            <mat-expansion-panel-header>
                 Votes
             </mat-expansion-panel-header>
 
-            This the expansion 2 content
+            <div style="margin-bottom:10px;">
+                    <div style="display:inline;">        
+                            <button style="float:right;" mat-stroked-button >Add / Edit Vote</button>
+                    </div>
+                    <div style="display:inline;">
+                            <label for="Type of Vote" class="form-field-label" style="width:10%;">Type of Vote</label>
+                            <mat-form-field id="TypeOfVote" class="fieldWidth">
+                                <mat-select>
+                                    <input matInput>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div>
+                            <label for="Date of Vote" class="form-field-label" style="width:10%;">Date of Vote</label>
+                            <mat-form-field class="fieldWidth">
+                                <input matInput [matDatepicker]="voteDate" [value]="voteDate.value">
+                                <mat-datepicker-toggle matSuffix [for]="voteDate"></mat-datepicker-toggle>
+                                <mat-datepicker #voteDate></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+
+            </div>
+
+            <div class="col-sm-2 inline-display"></div>
+            <div class="col-sm-8 inline-display">
+
+                <div>
+                    <table class="md-table" style="width:100%;">
+                        <thead>
+                            <tr>
+                                <th style="flex: 0 1 33.3%;">Yes</th>
+                                <th style="flex: 0 1 33.3%;">No</th>
+                                <th style="flex: 0 1 33.3%;">Abstain</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="flex: 0 1 33.3%;">ANGARA, JUAN EDGARDO "SONNY" M. </td>
+                                <td style="flex: 0 1 33.3%;">HONTIVEROS, RISA</td>
+                                <td style="flex: 0 1 33.3%;"></td>
+                            </tr>
+                            <tr>
+                                <td style="flex: 0 1 33.3%;">BINAY, MARIA LOURDES NANCY S. </td>
+                                <td style="flex: 0 1 33.3%;"></td>
+                                <td style="flex: 0 1 33.3%;"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+            </div>
+            <div class="col-sm-2 inline-display"></div>
 
         </mat-expansion-panel>
 
         <mat-expansion-panel [expanded]="isExpanded">
-            <mat-expansion-panel-header class="panel-header-custom">
+            <mat-expansion-panel-header>
                 President's Action
             </mat-expansion-panel-header>
 
@@ -201,8 +253,8 @@
 
         </mat-expansion-panel>
 
-        <mat-expansion-panel [expanded]="isExpanded" >
-            <mat-expansion-panel-header class="panel-header-custom">
+        <mat-expansion-panel [expanded]="isExpanded">
+            <mat-expansion-panel-header>
                 Copy of Documents
             </mat-expansion-panel-header>
 
@@ -211,7 +263,7 @@
         </mat-expansion-panel>
 
         <mat-expansion-panel [expanded]="isExpanded">
-            <mat-expansion-panel-header class="panel-header-custom">
+            <mat-expansion-panel-header>
                 Others
             </mat-expansion-panel-header>
 
@@ -233,22 +285,23 @@
                     </mat-form-field>
                 </div>
                 <div>
-                        <label for="Conference Requested By" class="form-field-label">Conference Requested By</label>
-                        <mat-form-field id="requestedBy" class="fieldWidth">
-                            <input matInput [(ngModel)]="requestedBy">
-                        </mat-form-field>
-    
-                    </div>
-                    <div>
-                            <label for="Date request to form a Conference Committee" class="form-field-label">Date request to form a Conference Committee</label>
-                            <mat-form-field class="fieldWidth">
-                                <input matInput [matDatepicker]="dateRequest" [value]="dateRequest.value">
-                                <mat-datepicker-toggle matSuffix [for]="dateRequest"></mat-datepicker-toggle>
-                                <mat-datepicker #dateRequest></mat-datepicker>
-                            </mat-form-field>
-                        </div>
+                    <label for="Conference Requested By" class="form-field-label">Conference Requested By</label>
+                    <mat-form-field id="requestedBy" class="fieldWidth">
+                        <input matInput [(ngModel)]="requestedBy">
+                    </mat-form-field>
+
+                </div>
+                <div>
+                    <label for="Date request to form a Conference Committee" class="form-field-label">Date request to
+                        form a Conference Committee</label>
+                    <mat-form-field class="fieldWidth">
+                        <input matInput [matDatepicker]="dateRequest" [value]="dateRequest.value">
+                        <mat-datepicker-toggle matSuffix [for]="dateRequest"></mat-datepicker-toggle>
+                        <mat-datepicker #dateRequest></mat-datepicker>
+                    </mat-form-field>
+                </div>
             </div>
-            <div class="col-sm-6 inline-display"></div> 
+            <div class="col-sm-6 inline-display"></div>
 
         </mat-expansion-panel>
     </div>
