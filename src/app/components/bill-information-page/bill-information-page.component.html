@@ -8,8 +8,8 @@
     <mat-tab label="Bills / Reso">
       <div style="padding:35px;">
         <div class="row" style="width:100%">
-          <div class="col-sm-6">
-            <table class="cell-padding">
+          <div class="col-sm-6" style="padding-right: 0">
+            <table class="cell-padding" style="width:100%">
               <tr>
                 <td class="label-bill-info">Bill / Res No.</td>
                 <td>{{ billItem.bill }}</td>
@@ -51,7 +51,7 @@
                       <th class="label-bill-info">Co-Author(s)</th>
                   </tr>
               </thead>
-              <tbody style="width: 592px; max-height: 200px; display: inline-block; overflow-y: scroll">
+              <tbody style="width: 392px; max-height: 300px; display: inline-block; overflow-y: scroll;margin-left: 200px" class="custom-scrollbar">
                   <tr *ngFor="let author of billItem.billInfo.coAuthors">
                       <td style="word-wrap:break-word">{{ author }}</td>
                   </tr>
@@ -61,7 +61,7 @@
         </div>
         <div class="row" style="width:100%">
           <div class="col-sm-12">
-            <table class="cell-padding">
+            <table class="cell-padding" style="width:100%">
               <tr>
                 <td style="word-wrap:break-word; width:25%; font-weight: bold; vertical-align: top;">Short Title</td>
                 <td style="word-wrap:break-word">{{ billItem.shortTitle }}</td>
@@ -129,7 +129,7 @@
                         <td class="label-bill-info-full">Subject</td>
                     </tr>
                 </thead>
-                <tbody style="max-height: 200px; display: inline-block; overflow-y: scroll">
+                <tbody style="max-height: 200px; display: inline-block;">
                     <tr *ngFor="let subject of billItem.billInfo.subject.subject">
                         <td style="word-wrap:break-word">{{ subject }}</td>
                     </tr>
@@ -176,7 +176,7 @@
                     <th>Remarks</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody class="custom-scrollbar">
                   <tr *ngFor="let floorAct of billItem.billInfo.floorActivity">
                     <td style="flex: 0 1 120px;">{{floorAct.statusDate}}</td>
                     <td style="flex: 0 1 280px;">{{floorAct.parliamentaryStatus}}</td>
