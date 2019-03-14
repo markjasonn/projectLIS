@@ -9,11 +9,13 @@ import { MAT_DIALOG_DATA } from '@angular/material';
 export class PickListDialogComponent implements OnInit {
 
   private sourceList: any[];
+  private destinationList: any [];
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any[]) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
-    this.sourceList = this.data;
+    this.sourceList = this.data.sourceList;
+    this.destinationList = this.data.destinationList;
   }
 
 }

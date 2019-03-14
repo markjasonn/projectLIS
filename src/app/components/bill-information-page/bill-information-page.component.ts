@@ -36,4 +36,21 @@ export class BillInformationPageComponent implements OnInit {
         }
     });
   }
+
+  newLine(value: string){
+      return value.replace(/  /g, "\n");
+  }
+
+  concatArrayString(values: string[]){
+      let concatValue: string = '';
+      if(values){
+          for(let x = 0; x < values.length; x++){
+             concatValue += values[x];
+             if(x < (values.length - 1)){
+                concatValue += '  ';
+             }
+          }
+      }
+      return this.newLine(concatValue);
+  }
 }
