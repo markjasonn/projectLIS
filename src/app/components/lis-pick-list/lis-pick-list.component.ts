@@ -8,6 +8,7 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges, Output, EventEmitte
 export class LisPickListComponent implements OnInit, OnChanges {
 
   @Input() sourceList:any [];
+  @Input() destinationList:any [];
   @Output() okButtonFunction: EventEmitter<any>;
 
   @ViewChild("sourceList") sourceListEl: ElementRef;
@@ -19,7 +20,6 @@ export class LisPickListComponent implements OnInit, OnChanges {
   private destSelectedItem: any[] = new Array();
   
 
-
   constructor() { }
 
   ngOnInit() {
@@ -30,6 +30,7 @@ export class LisPickListComponent implements OnInit, OnChanges {
 
     if (changes.sourceList){
       this.currentSourceList = this.sourceList;
+      this.selectedList = this.destinationList;
     }
 
   }
@@ -43,7 +44,7 @@ export class LisPickListComponent implements OnInit, OnChanges {
 
   moveAll(): void {
     this.selectedList.push.apply(this.selectedList, this.currentSourceList);
-    this.currentSourceList = [];
+    this.currentSourceList.splice(0, this.currentSourceList.length);
   }
 
   returnSelected(): void {
@@ -55,7 +56,11 @@ export class LisPickListComponent implements OnInit, OnChanges {
 
   returnAll(): void {
     this.currentSourceList.push.apply(this.currentSourceList, this.selectedList);
-    this.selectedList = [];
+    this.selectedList.splice(0, this.selectedList.length);
+  }
+
+  cancelPickListSelection(): void {
+    this.returnAll();
   }
 
 }

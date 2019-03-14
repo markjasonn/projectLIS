@@ -15,7 +15,10 @@
 
     <div>
         <label class="form-field-label" >Co-Sponsor</label> &nbsp;
-        <button mat-stroked-button style="font-style:italic;" (click)="showCoSponsors(); showPickListDialog();" >Please Select...</button>
+        <button mat-stroked-button style="font-style:italic;" (click)="showPickListDialog(sponsorsSourceList, sponsorsDestList);" >
+          <label *ngIf="this.sponsorsDestList.length == 0 " >Please Select...</label>
+          <label *ngIf="this.sponsorsDestList.length > 0 " >({{this.sponsorsDestList.length}}) selected  </label>
+        </button>
     </div>
 
     <div>
@@ -31,12 +34,18 @@
 
     <div>
         <label for="Secondary Committee" class="form-field-label" >Secondary Committee</label> &nbsp;
-        <button mat-stroked-button style="font-style:italic;" (click)="show2ndCommitte(); showPickListDialog();" >Please Select...</button>
+        <button mat-stroked-button style="font-style:italic;" (click)="showPickListDialog(committeeSourceList, committeeDestList);" >
+          <label *ngIf="this.committeeDestList.length == 0 " >Please Select...</label>
+          <label *ngIf="this.committeeDestList.length > 0 " >({{this.committeeDestList.length}}) selected  </label>
+        </button>
     </div>
 
     <div>
         <label for="Subject" class="form-field-label" >Subject</label> &nbsp;
-        <button mat-stroked-button style="font-style:italic;" (click)="showSubject(); showPickListDialog();" >Please Select...</button>
+        <button mat-stroked-button style="font-style:italic;" (click)="showPickListDialog(subjectSourceList, subjectDestList);" >
+          <label *ngIf="this.subjectDestList.length == 0 " >Please Select...</label>
+          <label *ngIf="this.subjectDestList.length > 0 " >({{this.subjectDestList.length}}) selected  </label>
+        </button>
     </div>
 
     <div>
