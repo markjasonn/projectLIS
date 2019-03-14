@@ -35,14 +35,22 @@ export class BillInformationPageComponent implements OnInit {
             this.billItem = billItems[0]; // get the value (returns 1 value only)
         }
     });
-
-    
-
   }
 
-
-  test(){
-    this.billItem.billInfo.subject.subject
+  newLine(value: string){
+      return value.replace(/  /g, "\n");
   }
 
+  concatArrayString(values: string[]){
+      let concatValue: string = '';
+      if(values){
+          for(let x = 0; x < values.length; x++){
+             concatValue += values[x];
+             if(x < (values.length - 1)){
+                concatValue += '  ';
+             }
+          }
+      }
+      return this.newLine(concatValue);
+  }
 }

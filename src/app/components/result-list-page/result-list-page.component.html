@@ -19,7 +19,8 @@
                           [scrollWindow]="false"
                           (scrolled)="onScrollDownTable()">
                         <tr *ngFor="let element of tableDataObject.displayContainer;">
-                          <td style="flex: 0 1 120px;"><a routerLink="/billing-info/{{element.bill}}" routerLinkActive="active">{{element.bill}}</a></td>
+                          <td *ngIf="element.billInfo" style="flex: 0 1 120px;"><a routerLink="/billing-info/{{element.bill}}" routerLinkActive="active">{{element.bill}}</a></td>
+                          <td *ngIf="!element.billInfo" style="flex: 0 1 120px;">{{element.bill}}</td>
                           <td>{{element.shortTitle}}</td>
                           <td style="flex: 0 1 120px;">{{element.dateFiled}}</td>
                           <td style="flex: 0 1 320px;">{{element.author}}</td>
