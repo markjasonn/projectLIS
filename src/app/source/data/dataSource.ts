@@ -193,9 +193,41 @@ const billSearchResult: BillItems[] = [
         }
     },
 
-
-
-    {bill: 'SBN-2104', shortTitle: 'AUTOMATIC REVERSAL OF THE EXCISE TAX ON FUEL UNDER R.A NO.10963 (TRAIN LAW)', dateFiled: "11/19/2018", author: 'VILLANUEVA, JOEL', billInfo: null},
+    {bill: 'SBN-2104', shortTitle: 'AUTOMATIC REVERSAL OF THE EXCISE TAX ON FUEL UNDER R.A NO.10963 (TRAIN LAW)', dateFiled: "11/19/2018", author: 'VILLANUEVA, JOEL', 
+        billInfo: {
+            legislativeStatus: "PENDING IN THE COMMITTEE", 
+            statusDate: "11/21/2018",
+            sessionSequenceNo: "36",
+            sessionType: "THIRD REGULAR SESSION",
+            scope: "NATIONAL",
+            author: "VILLANUEVA, JOEL",
+            coAuthors: [],
+            longTitle : 'AN ACT PROVIDING FOR THE AUTOMATIC REVERSAL OF THE EXCISE TAX ON FUEL UNDER REPUBLIC ACT NO. 10963 OTHERWISE KNOWN AS THE ‘TAX REFORM FOR ACCELERATION AND INCLUSION (TRAIN)’ AMENDING FOR THE PURPOSE, THE NATIONAL INTERNAL REVENUE CODE (NIRC) OF 1997, AS AMENDED',
+            committeeReportNo : {
+                primaryCommittee: "WAYS AND MEANS",
+                secondaryCommittee: "",
+                committeeReportNo: ""
+            },
+            sponsor: null,
+            subject: {
+                subject: ['TAXES (EXCISE TAX)','TAX REFORM FOR ACCELERATION AND INCLUSION ACT (TRAIN)','NATIONAL INTERNAL REVENUE CODE (NIRC)','PETROLEUM PRODUCTS','FUEL']
+            },
+            documentCertification: {
+                documentCertification : 'NO CERTIFICATION',
+                dateCertified : ''
+            },
+            vote: null,
+            billTransmittal: null,
+            rAResJRes: null,
+            attachments:[
+                {
+                    documentDescription: 'SBN-2104, AS FILED',
+                    filename: 'sbn-2104.pdf'
+                }
+            ],
+            floorActivity: null
+        }
+    },
     {bill: 'SBN-2029', shortTitle: 'TEACHERS OF CHILDREN WITH HANDICAPS ENHANCEMENT ACT', dateFiled: " 9/24/2018", author: 'BINAY, MARIA LOURDES NANCY S.', billInfo: null},
     {bill: 'SBN-1989', shortTitle: 'SOUTH COTABATO MANPOWER TRAINING CENTER ACT', dateFiled: " 9/10/2018", author: 'BINAY, MARIA LOURDES NANCY S.', billInfo: null},
     {bill: 'SBN-1967', shortTitle: 'CONVERTING THE ZIGA MEMORIAL DISTRICT HOSPITAL IN THE CITY OF TABACO, PROVINCE OF ALBAY', dateFiled: "8/30/2018", author: 'EJERCITO, JOSEPH VICTOR G.', billInfo: null},
