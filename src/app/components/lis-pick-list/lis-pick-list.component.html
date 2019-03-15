@@ -3,32 +3,34 @@
   <button style="visibility:hidden;" ></button>
   <button style="visibility:hidden;" ></button>
 
-  <div style="width: 400px; float: left; border: 1px solid; height: 300px; " >
-    <mat-selection-list #sourceList>
-      <mat-list-option *ngFor="let current of currentSourceList">
-        {{current.name}}
-      </mat-list-option>
-    </mat-selection-list>
-  </div>
-
-  <div class="pick-list-move-buttons">
-      <button mat-raised-button > > </button>
-      <button mat-raised-button > >> </button>
-      <button mat-raised-button > < </button>
-      <button mat-raised-button > << </button>
-  </div>
-
-  <div style="width: 400px; float: right; border: 1px solid; height: 300px; " >
-    <mat-selection-list #destinationList>
-      <mat-list-option *ngFor="let current of destinationList">
+  <div class="clear-fix">
+    <div style="width: 400px; float: left; border: 1px solid; height: 300px; " >
+      <mat-selection-list #sourceList [(ngModel)]="sourceSelectedItem" >
+        <mat-list-option *ngFor="let current of currentSourceList" [value]="current" >
           {{current.name}}
-      </mat-list-option>
-    </mat-selection-list>
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
+  
+    <div class="pick-list-move-buttons">
+        <button mat-raised-button (click)="moveSelected()" > > </button>
+        <button mat-raised-button (click)="moveAll()"  > >> </button>
+        <button mat-raised-button (click)="returnSelected()" > < </button>
+        <button mat-raised-button (click)="returnAll()" > << </button>
+    </div>
+  
+    <div style="width: 400px; float: right; border: 1px solid; height: 300px; " >
+      <mat-selection-list #destinationList [(ngModel)]="destSelectedItem" >
+        <mat-list-option *ngFor="let select of selectedList" [value]="select" >
+          {{select.name}}
+        </mat-list-option>
+      </mat-selection-list>
+    </div>
   </div>
 
-  <div class="clear-fix " style="float:right;" >
-      <button mat-raised-button >OK</button>
-      <button mat-raised-button >Cancel</button>
+  <div style="float:right; margin-top: 10px;">
+      <button mat-dialog-close >OK</button>
+      <button  mat-dialog-close (click)="cancelPickListSelection();"  >Cancel</button>
   </div>
 
 </div>

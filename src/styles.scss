@@ -37,10 +37,20 @@ mat-tab-group{
     div.mat-tab-label{
         min-width: 30px;
         padding: 0px 10px;
-        font-size: 13px;
+        font-size: 1rem;
     }
+}
+
+.page-layout{
+    width:90%;
+    margin-left: 90px;
+    margin-top: 100px;
 }
 
 a {
     color: rgba(0, 0, 0, 0.87) !important;
 }
+
+
+
+

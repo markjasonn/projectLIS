@@ -26,7 +26,8 @@ export class SearchPageMidLeftComponent implements OnInit {
   private billResoNo: string;
   private legislativeStatus: string;
   private author: string;
-  private currentSouceList: any[];
+  private currentSouceList: any[] = new Array();
+  private currentDestinationList: any[] = new Array();
   private sessionTypes: SessionTypes[] = [
     {value: 'FIRST REGULAR SESSION', name: 'FIRST REGULAR SESSION'},
     {value: 'FIRST SPECIAL SESSION', name: 'FIRST SPECIAL SESSION'},
@@ -81,6 +82,7 @@ export class SearchPageMidLeftComponent implements OnInit {
 
   ngOnInit() {
     this.inititlizeDatePickerValues();
+    this.showCoAuthors();
   }
 
 
@@ -103,14 +105,14 @@ export class SearchPageMidLeftComponent implements OnInit {
 
 
   showCoAuthors(): void {
-    this.currentSouceList = this.authors;
+    this.currentSouceList.push.apply(this.currentSouceList, this.authors);
   }
 
 
   showPickListDialog(): void {
     const dialogRef = this.dialog.open(PickListDialogComponent, {
       width: '1000px',
-      data: this.currentSouceList
+      data: {sourceList: this.currentSouceList, destinationList: this.currentDestinationList}
     });
   }
 

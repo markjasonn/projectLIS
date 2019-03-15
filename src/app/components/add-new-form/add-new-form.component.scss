@@ -1,25 +1,15 @@
-.label-padding {
-    line-height: 2;
-}
-
-.cell-padding td{
-    padding: 10px;
-}
-
-.cell-padding-votes td{
-    padding: 5px;
-}
-
-.label-bill-info {
-    width:50%; 
-    font-weight: bold; 
+.inline-display {
+    display:inline-block;
     vertical-align: top;
 }
 
-.label-bill-info-full {
-    width:25%; 
-    font-weight: bold; 
-    vertical-align: top;
+.form-field-label {
+    display: inline-block;
+    width: 30%;    
+}
+
+.fieldWidth {
+    width:260px !important;
 }
 
 .md-table {
@@ -51,12 +41,14 @@
     tbody {
         display: block;
         width: 100%;
-        overflow-y: auto;
+        overflow-y: overlay;
         max-height: 600px;
 
         tr {
             border-bottom: 1px solid #ddd;
             background-color: #fff;
+
+            &:hover { background-color: #efefef; }
         }
 
         td {
@@ -73,16 +65,3 @@
     }
   }
 
-  .custom-scrollbar {
-      &::-webkit-scrollbar {
-        width: 10px;
-      }
-
-      &::-webkit-scrollbar-track {
-        background: #e8e8e8;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background: #969696;
-      }
-  }

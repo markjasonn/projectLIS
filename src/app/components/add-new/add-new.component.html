@@ -1,5 +1,90 @@
-<mat-tab-group [selectedIndex]=1>
-  <mat-tab label="System Fields">  </mat-tab>
-  <mat-tab label="Standard Tags"> </mat-tab>
-  <mat-tab label="Copy of Document">  </mat-tab>
+<div class="page-layout">
+<mat-tab-group [selectedIndex]=1 style="margin-top:50px;">
+  <mat-tab label="System Fields">
+    
+      <div style="padding:35px;">
+          <div class="row" style="width:100%">
+            <div class="col-sm-10" style="margin: 0 auto;">
+              <div>
+                <table class="md-table" style="width:100%;">
+                  <thead>
+                    <tr>
+                      <th style="flex: 0 1 20%;">Date / Time</th>
+                      <th style="flex: 0 1 40%;">Modified By</th>
+                      <th style="flex: 0 1 40%;">Remarks</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="flex: 0 1 20%;">12/02/2019 03:24PM	</td>
+                      <td style="flex: 0 1 40%;">SYSTEM ADMINISTRATOR</td>
+                      <td style="flex: 0 1 40%;">Created Bill SBN-2104</td>
+                    </tr>
+                    <tr>
+                      <td style="flex: 0 1 20%;">12/02/2019 03:24PM	</td>
+                      <td style="flex: 0 1 40%;">SYSTEM ADMINISTRATOR</td>
+                      <td style="flex: 0 1 40%;">Modified field(s):
+                          Author -  GORDON, RICHARD J. LEGARDA to 
+                          RECTO, RALPH G.;</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+        </div>  
+  
+  
+  </mat-tab>
+
+  
+  <mat-tab label="Standard Tags"> 
+      <add-new-form-page></add-new-form-page>
+  </mat-tab>
+
+
+  <mat-tab label="Copy of Document">  
+
+      <div style="padding:35px;">
+          <div class="row" style="width:100%">
+            <div class="col-sm-10" style="margin: 0 auto;">
+              <div>
+                <table class="md-table" style="width:100%;">
+                  <thead>
+                    <tr>
+                      <th style="flex: 0 1 10%;">Action</th>
+                      <th style="flex: 0 1 20%;">Uploaded By</th>
+                      <th style="flex: 0 1 20%;">Upload Date</th>
+                      <th style="flex: 0 1 20%;">File Name</th>
+                      <th style="flex: 0 1 30%;">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td style="flex: 0 1 10%;"><mat-icon>save_alt</mat-icon></td>
+                      <td style="flex: 0 1 20%;">SYSTEM ADMINISTRATOR</td>
+                      <td style="flex: 0 1 20%;">12/02/2019 03:24PM</td>
+                      <td style="flex: 0 1 20%;">Created Bill SBN-2104</td>
+                      <td style="flex: 0 1 30%;">Created Bill SBN-2104</td>
+                    </tr>
+                    <tr>
+                      <td style="flex: 0 1 10%;"><mat-icon>save_alt</mat-icon></td>
+                      <td style="flex: 0 1 20%;">SYSTEM ADMINISTRATOR</td>
+                      <td style="flex: 0 1 20%;">12/02/2019 03:24PM</td>
+                      <td style="flex: 0 1 20%;">SYSTEM ADMINISTRATOR</td>
+                      <td style="flex: 0 1 30%;">SYSTEM ADMINISTRATOR</td>
+                      
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="col-sm-4"></div>
+          </div>
+        </div>  
+
+
+  </mat-tab>
 </mat-tab-group>
+</div>

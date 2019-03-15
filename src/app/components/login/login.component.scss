@@ -1,0 +1,35 @@
+.login-layout{
+    background-image: url("/assets/logo/senate_background.svg"); 
+    height: 100%; 
+    width: 100%;
+    //margin-top: 100px;
+}
+
+
+.center-panel {
+    margin: auto;
+    background: rgba(212, 212, 212, 0.2);
+    min-height: 500px;
+    transform: translate(0, 50%);
+    text-align: center;
+}
+
+.input-style {
+    border: 1px solid whitesmoke;
+    background: rgba(240, 248, 255, 0.2);
+    border-radius: 6px;
+    min-width: 250px;
+    min-height: 35px;
+    color: whitesmoke;
+    letter-spacing: 4.5px;
+    &::placeholder{
+        color: whitesmoke;
+    }
+}
+
+.header-label{
+    line-height: 6px; 
+    margin-left: 14px; 
+    font-family: "Trajan Pro";
+    color: whitesmoke;
+}
