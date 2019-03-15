@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class BillInformationPageComponent implements OnInit {
 
-  constructor( private activeRoute: ActivatedRoute ) { }
+  constructor( public activeRoute: ActivatedRoute ) { }
   
   // billNo: string = '';
   // billItems: BillItems[];

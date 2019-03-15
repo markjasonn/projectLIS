@@ -19,6 +19,8 @@ dateCertified: FormControl = new FormControl();
 requestedBy: string = '';
 dateRequest: FormControl = new FormControl();
 voteDate: FormControl = new FormControl();
+billLongTitle: string = '';
+committeeReportNo: number;
 
   constructor( ) { }
 

@@ -14,10 +14,10 @@ export class LisPickListComponent implements OnInit, OnChanges {
   @ViewChild("sourceList") sourceListEl: ElementRef;
   
 
-  private currentSourceList: any[] = new Array();
-  private selectedList: any[] = new Array();
-  private sourceSelectedItem: any[] = new Array();
-  private destSelectedItem: any[] = new Array();
+  currentSourceList: any[] = new Array();
+  selectedList: any[] = new Array();
+  sourceSelectedItem: any[] = new Array();
+  destSelectedItem: any[] = new Array();
   
 
   constructor() { }
