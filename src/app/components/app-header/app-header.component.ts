@@ -11,7 +11,7 @@ export class AppHeaderComponent {
 
     @Output() public sidenavToggle = new EventEmitter();
  
-    constructor( private router: Router ) { }
+    constructor( public router: Router ) { }
    
     ngOnInit() {
     }

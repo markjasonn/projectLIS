@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEditVotesComponent implements OnInit {
 
-  private senatorVoteStatus: SenatorVoteStatus[] = [
+  senatorVoteStatus: SenatorVoteStatus[] = [
     {name:'ANGARA, JUAN EDUARDO "SONNY" M.', yes:'Yes', no:'', abstain:''},
     {name:'AQUINO IV, PAULO BENIGNO "BAM".', yes:'', no:'No', abstain:''},
     {name:'BINAY, MARIA LOURDES NANCY S.', yes:'', no:'NO', abstain:''},
