@@ -1,0 +1,24 @@
+<div>
+
+  <table class="md-table" style="width:100%;" >
+      <thead>
+        <tr>
+          <th style="flex: 0 1 120px;">Name</th>          
+          <th style="flex: 0 1 120px;">Yes</th>
+          <th style="flex: 0 1 320px;">No</th>
+          <th style="flex: 0 1 320px;">Abstain</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let senators of senatorVoteStatus" >
+            <td style="flex: 0 1 33.3%;">{{senators.name}} </td>
+            <td style="flex: 0 1 33.3%;">{{senators.yes}} </td>
+            <td style="flex: 0 1 33.3%;">{{senators.no}} </td>
+            <td style="flex: 0 1 33.3%;">{{senators.abstain}} </td>
+        </tr>
+      </tbody>
+  </table>
+
+  
+
+</div>
