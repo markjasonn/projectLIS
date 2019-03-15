@@ -64,7 +64,7 @@ export class ResultListPageComponent implements OnInit {
       this.setListPerDisplay(this.tableDataObject);
   }
 
-  onScrollDownTable(ev){
+  onScrollDownTable(){
       this.displayMoreItems(this.tableDataObject);
   }
 }
