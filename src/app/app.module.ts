@@ -35,6 +35,7 @@ import { LisPickListComponent } from './components/lis-pick-list/lis-pick-list.c
 import { PickListDialogComponent } from './components/pick-list-dialog/pick-list-dialog.component';
 import { AddNewComponentForm } from './components/add-new-form/add-new-form.component';
 import { LoginComponent } from './components/login/login.component';
+import { AddEditVotesComponent } from './components/add-edit-votes/add-edit-votes.component';
 
 const appRoutes: Routes = [
   { path: 'search', component: SearchPageComponent },
@@ -66,7 +67,7 @@ const appRoutes: Routes = [
     BillInformationPageComponent,
     AppHeaderComponent, SidenavListComponent, SearchPageTopComponent, SearchPageMidComponent, AddNewComponent,
     LisPickListComponent, PickListDialogComponent, SearchPageMidLeftComponent, SearchPageMidRightComponent, SearchPageBottomComponent,
-    AddNewComponentForm, LoginComponent
+    AddNewComponentForm, LoginComponent, AddEditVotesComponent
   ],
   imports: [
     RouterModule.forRoot(
