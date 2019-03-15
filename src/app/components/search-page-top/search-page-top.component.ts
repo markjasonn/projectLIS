@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPageTopComponent implements OnInit {
 
-  private congressLibrary: string;
-  private searchCategory: string;
-  private congressLibraries: CongressLibraries[] = [
+  congressLibrary: string;
+  searchCategory: string;
+  congressLibraries: CongressLibraries[] = [
     {libValue: 'THIRTEENTH', libName: 'THIRTEENTH'},
     {libValue: 'FOURTEENTH', libName: 'FOURTEENTH'},
     {libValue: 'FIFTEENTH', libName: 'FIFTEENTH'},

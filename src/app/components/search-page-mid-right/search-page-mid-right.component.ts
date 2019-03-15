@@ -10,23 +10,23 @@ import { PickListDialogComponent } from '../pick-list-dialog/pick-list-dialog.co
 })
 export class SearchPageMidRightComponent implements OnInit {
 
-  private sponsor: string;
-  private primaryCommittee: string;
-  private secondaryCommittee: string;
-  private documentCertification: string;
-  private dateCertFrom: FormControl;
-  private serializedfiledDateCertFrom: FormControl;
-  private dateCertTo: FormControl;
-  private serializedfiledDateCertTo: FormControl;
-  private scope: string;
-  private sponsorsSourceList: any[] = new Array();
-  private sponsorsDestList: any[] = new Array();
-  private committeeSourceList: any[] = new Array();
-  private committeeDestList: any[] = new Array();
-  private subjectSourceList: any[] = new Array();
-  private subjectDestList: any[] = new Array();
+  sponsor: string;
+  primaryCommittee: string;
+  secondaryCommittee: string;
+  documentCertification: string;
+  dateCertFrom: FormControl;
+  serializedfiledDateCertFrom: FormControl;
+  dateCertTo: FormControl;
+  serializedfiledDateCertTo: FormControl;
+  scope: string;
+  sponsorsSourceList: any[] = new Array();
+  sponsorsDestList: any[] = new Array();
+  committeeSourceList: any[] = new Array();
+  committeeDestList: any[] = new Array();
+  subjectSourceList: any[] = new Array();
+  subjectDestList: any[] = new Array();
 
-  private sponsors: Sponsors[] = [
+  sponsors: Sponsors[] = [
     {value:'ANGARA, JUAN EDUARDO "SONNY" M.', name:'ANGARA, JUAN EDUARDO "SONNY" M.'},
     {value:'AQUINO IV, PAULO BENIGNO "BAM"', name:'AQUINO IV, PAULO BENIGNO "BAM"'},
     {value:'BINAY, MARIA LOURDES NANCY S.', name:'BINAY, MARIA LOURDES NANCY S.'},
@@ -34,7 +34,7 @@ export class SearchPageMidRightComponent implements OnInit {
     {value:'DE LIMA, LEILA M.', name:'DE LIMA, LEILA M.'}
   ];
 
-  private primaryCommittees: PrimaryCommittees[] = [
+  primaryCommittees: PrimaryCommittees[] = [
     {value:'ACCOUNTABILITY OF PUBLIC OFFICERS AND INVESTIGATIONS', name:'ACCOUNTABILITY OF PUBLIC OFFICERS AND INVESTIGATIONS'},
     {value:'ACCOUNTS', name:'ACCOUNTS'},
     {value:'AGRARIAN REFORM', name:'AGRARIAN REFORM'},
@@ -42,7 +42,7 @@ export class SearchPageMidRightComponent implements OnInit {
     {value:'BANKS, FINANCIAL INSTITUTIONS AND CURRENCIES', name:'BANKS, FINANCIAL INSTITUTIONS AND CURRENCIES'}
   ];
 
-  private subject: Subject[] = [
+  subject: Subject[] = [
     {value:'14TH MONTH PAY', name:'14TH MONTH PAY'},
     {value:'18TH ASIAN GAMES, 2018, INDONESIA', name:'18TH ASIAN GAMES, 2018, INDONESIA'},
     {value:'24/7 DIRECT NATIONAL EMERGENCY HOTLINE', name:'24/7 DIRECT NATIONAL EMERGENCY HOTLINE'},
@@ -51,20 +51,20 @@ export class SearchPageMidRightComponent implements OnInit {
     {value:'ABOLITION', name:'ABOLITION'}
   ];
 
-  private certificates: Certification[] = [
+  certificates: Certification[] = [
     {value:'NO CERTIFICATION', name:'NO CERTIFICATION'},
     {value:'IMMEDIATE', name:'IMMEDIATE'},
     {value:'PRIORITY', name:'PRIORITY'}
   ];
 
-  private scopes: Scopes[] = [
+  scopes: Scopes[] = [
     {value:'BOTH', name:'BOTH'},
     {value:'LOCAL', name:'LOCAL'},
     {value:'NATIONAl', name:'NATIONAl'}
   ];
   
 
-  constructor(private dialog: MatDialog) { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
 

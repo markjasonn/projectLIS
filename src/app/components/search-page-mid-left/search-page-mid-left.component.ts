@@ -12,23 +12,23 @@ import { PickListDialogComponent } from '../pick-list-dialog/pick-list-dialog.co
 export class SearchPageMidLeftComponent implements OnInit {
 
 
-  private filedFromDate: FormControl;
-  private serializedfiledFromDate: FormControl;
-  private filedDateTo: FormControl;
-  private serializedfiledDateTo: FormControl;
-  private statusFromDate: FormControl;
-  private serializedfiledstatusFromDate: FormControl;
-  private statusDateTo: FormControl;
-  private serializedfiledstatusStatusDateTo: FormControl;
-  private sessionSequenceNo: string;
-  private sessionType: string;
-  private billResoNoDrop: string;
-  private billResoNo: string;
-  private legislativeStatus: string;
-  private author: string;
-  private currentSouceList: any[] = new Array();
-  private currentDestinationList: any[] = new Array();
-  private sessionTypes: SessionTypes[] = [
+  filedFromDate: FormControl;
+  serializedfiledFromDate: FormControl;
+  filedDateTo: FormControl;
+  serializedfiledDateTo: FormControl;
+  statusFromDate: FormControl;
+  serializedfiledstatusFromDate: FormControl;
+  statusDateTo: FormControl;
+  serializedfiledstatusStatusDateTo: FormControl;
+  sessionSequenceNo: string;
+  sessionType: string;
+  billResoNoDrop: string;
+  billResoNo: string;
+  legislativeStatus: string;
+  author: string;
+  currentSouceList: any[] = new Array();
+  currentDestinationList: any[] = new Array();
+  sessionTypes: SessionTypes[] = [
     {value: 'FIRST REGULAR SESSION', name: 'FIRST REGULAR SESSION'},
     {value: 'FIRST SPECIAL SESSION', name: 'FIRST SPECIAL SESSION'},
     {value: 'SECOND REGULAR SESSION', name: 'SECOND REGULAR SESSION'},
@@ -42,7 +42,7 @@ export class SearchPageMidLeftComponent implements OnInit {
 
   ];
 
-  private billTypes: BillTypes[] = [
+  billTypes: BillTypes[] = [
     {value:'HBN', name:'HOUSE BILL'},
     {value:'HCR', name:'HOUSE CONCURRENT RESOLUTION'},
     {value:'HJR', name:'HOUSE JOINT RESOLUTION'},
@@ -57,7 +57,7 @@ export class SearchPageMidLeftComponent implements OnInit {
     {value:'UNR', name:'UNNUMBERED RESOLUTION'}
   ];
 
-  private legislativeStatusChoice: LegislativeStatus[] = [
+  legislativeStatusChoice: LegislativeStatus[] = [
     {value:'none', name:''},
     {value:'PENDING SENATE', name:'PENDING SENDATE'},
     {value:'COPY OF RESOLUTION READ', name:'COPY OF RESOLUTION READ'},
@@ -69,7 +69,7 @@ export class SearchPageMidLeftComponent implements OnInit {
     {value:'APPROVED ON SECOND READING, WITHOUT AMMENDMENT', name:'APPROVED ON SECOND READING, WITHOUT AMMENDMENT'},
   ];
 
-  private authors: Authors[] = [
+  authors: Authors[] = [
     {value:'ANGARA, JUAN EDUARDO "SONNY" M.', name:'ANGARA, JUAN EDUARDO "SONNY" M.'},
     {value:'AQUINO IV, PAULO BENIGNO "BAM"', name:'AQUINO IV, PAULO BENIGNO "BAM"'},
     {value:'BINAY, MARIA LOURDES NANCY S.', name:'BINAY, MARIA LOURDES NANCY S.'},
