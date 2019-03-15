@@ -51,7 +51,7 @@
     tbody {
         display: block;
         width: 100%;
-        overflow-y: overlay;
+        overflow-y: auto;
         max-height: 600px;
 
         tr {
@@ -71,4 +71,18 @@
 
          }
     }
+  }
+
+  .custom-scrollbar {
+      &::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #e8e8e8;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #969696;
+      }
   }
